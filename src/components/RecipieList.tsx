@@ -1,14 +1,14 @@
 import Recipies from "../models/Recipies";
-import "./Favorites.css";
 import RecipieItem from "./RecipieItem";
+import "./RecipieList.css";
 
 interface Props {
   recipie: Recipies[];
 }
 
-const Favorites = ({ recipie }: Props) => {
+const RecipieList = ({ recipie }: Props) => {
   return (
-    <ul className="Favorites">
+    <ul className="RecipieList">
       {recipie.map((item) => (
         <RecipieItem item={item} key={item?._id} />
       ))}
@@ -16,4 +16,4 @@ const Favorites = ({ recipie }: Props) => {
   );
 };
 
-export default Favorites;
+export default RecipieList;
