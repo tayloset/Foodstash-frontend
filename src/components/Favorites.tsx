@@ -3,13 +3,13 @@ import "./Favorites.css";
 import RecipeItem from "./RecipeItem";
 
 interface Props {
-  recipie: Recipes[];
+  recipe: Recipes[];
 }
 
-const Favorites = ({ recipie }: Props) => {
+const Favorites = ({ recipe }: Props) => {
   return (
     <ul className="Favorites">
-      {recipie.map((item) => (
+      {recipe.map((item) => (
         <RecipeItem item={item} key={item?._id} />
       ))}
     </ul>
