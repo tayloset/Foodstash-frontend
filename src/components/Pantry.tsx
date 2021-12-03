@@ -9,7 +9,7 @@ const Pantry = () => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    updateProfileHandler("pantry");
+    updateProfileHandler("pantry", pantry);
   };
 
   return (

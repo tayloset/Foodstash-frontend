@@ -17,13 +17,15 @@ export const addProfile = (uid: string): Promise<Profile> => {
 
 export const updateProfile = (
   uid: string,
-  category: string
+  category: string,
+  updateData: string
 ): Promise<Profile> => {
   return axios
     .put(
       `${baseURL}/profiles/${encodeURIComponent(uid)}/${encodeURIComponent(
         category
-      )}`
+      )}`,
+      { updateData }
     )
     .then((response) => {
       console.log(response.data);

@@ -9,9 +9,9 @@ function UpdateProfileContextProvider({ children }: { children: ReactNode }) {
   const grabUserProfile = () => {
     getProfile(auth.currentUser?.uid!).then((array) => setProfile(array[0]));
   };
-  const updateProfileHandler = (category: string): void => {
+  const updateProfileHandler = (category: string, updateData: string): void => {
     grabUserProfile();
-    updateProfile(profile?.uid!, category);
+    updateProfile(profile?.uid!, category, updateData);
   };
 
   return (
