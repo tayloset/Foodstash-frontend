@@ -8,7 +8,7 @@ interface Props {
 
 const RecipeList = ({ recipe }: Props) => {
   return (
-    <ul className="RecipieList">
+    <ul className="RecipeList">
       {recipe.map((item) => (
         <RecipeItem item={item} key={item?._id} />
       ))}
