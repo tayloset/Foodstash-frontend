@@ -31,7 +31,7 @@ export default interface Profile {
   uid: string;
   pantry: string[];
   equipment: string[];
-  diet: any;
+  diet: Diet;
   intolerances: any;
   favorites: string[];
 }

@@ -1,7 +1,20 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import "./Intolerances.css";
 
 const Intolerances = () => {
+  const [dairy, setDairy] = useState(false);
+  const [egg, setEgg] = useState(false);
+  const [gluten, setGluten] = useState(false);
+  const [grain, setGrain] = useState(false);
+  const [peanut, setPeanut] = useState(false);
+  const [seafood, setSeafood] = useState(false);
+  const [sesame, setSesame] = useState(false);
+  const [shellfish, setShellfish] = useState(false);
+  const [soy, setSoy] = useState(false);
+  const [sulfite, setSulfite] = useState(false);
+  const [treeNut, setTreeNut] = useState(false);
+  const [wheat, setWheat] = useState(false);
+
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
   };

@@ -18,7 +18,7 @@ export const addProfile = (uid: string): Promise<Profile> => {
 export const updateProfile = (
   uid: string,
   category: string,
-  updateData: string
+  updateData: any
 ): Promise<Profile> => {
   return axios
     .put(
@@ -28,7 +28,6 @@ export const updateProfile = (
       { updateData }
     )
     .then((response) => {
-      console.log(response.data);
       return response.data;
     });
 };

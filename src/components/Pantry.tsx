@@ -1,6 +1,5 @@
 import { FormEvent, useContext, useState } from "react";
 import "./Pantry.css";
-import "../context/UpdateProfileContext";
 import UpdateProfileContext from "../context/UpdateProfileContext";
 
 const Pantry = () => {
