@@ -2,12 +2,12 @@ import { FormEvent } from "react";
 import "./Intolerances.css";
 
 const Intolerances = () => {
-  const sunbmitHandler = (e: FormEvent) => {
+  const submitHandler = (e: FormEvent) => {
     e.preventDefault();
   };
 
   return (
-    <form className="Intolerances" onSubmit={sunbmitHandler}>
+    <form className="Intolerances" onSubmit={submitHandler}>
       <input type="checkbox" name="dairy" id="dairy" />
       <label htmlFor="dairy">Dairy</label>
 

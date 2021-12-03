@@ -2,12 +2,12 @@ import { FormEvent } from "react";
 import "./Diet.css";
 
 const Diet = () => {
-  const sunbmitHandler = (e: FormEvent) => {
+  const submitHandler = (e: FormEvent) => {
     e.preventDefault();
   };
 
   return (
-    <form className="Diet" onSubmit={sunbmitHandler}>
+    <form className="Diet" onSubmit={submitHandler}>
       <label htmlFor="glutenFree">Gluten Free</label>
       <input
         type="checkbox"
