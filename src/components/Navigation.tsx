@@ -6,7 +6,7 @@ import Diet from "../assets/Diet.png";
 import Intolerances from "../assets/Intolerances.png";
 import Equipment from "../assets/Equipment.png";
 import Favorites from "../assets/Favorites.png";
-
+//comment
 const Navigation = () => {
   return (
     <div className="Navigation">
