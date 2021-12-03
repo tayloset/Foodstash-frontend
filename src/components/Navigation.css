@@ -1,0 +1,13 @@
+.Navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Navigation :link {
+  text-decoration: none;
+}
+
+.Navigation img {
+  width: 50%;
+  height: 50%;
+}

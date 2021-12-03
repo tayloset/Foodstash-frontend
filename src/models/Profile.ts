@@ -1,4 +1,4 @@
-interface Diet {
+export interface Diet {
   glutengree: boolean;
   ketogenic: boolean;
   vegetarian: boolean;
