@@ -1,8 +1,13 @@
+import { FormEvent } from "react";
 import "./Diet.css";
 
 const Diet = () => {
+  const sunbmitHandler = (e: FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
-    <div className="Diet">
+    <form className="Diet" onSubmit={sunbmitHandler}>
       <label htmlFor="glutenFree">Gluten Free</label>
       <input
         type="checkbox"
@@ -130,7 +135,7 @@ const Diet = () => {
       </p>
 
       <button>Save</button>
-    </div>
+    </form>
   );
 };
 
