@@ -1,7 +1,9 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Header.css";
+import Logo from "../assets/Logo.png";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
@@ -9,7 +11,10 @@ const Header = () => {
 
   return (
     <header className="Header">
-      <h1>Foodstash</h1>
+      <Link to="/">
+        <img src={Logo} />
+        <h1>Foodstash</h1>
+      </Link>
       {user ? (
         <button onClick={signOut}>Sign out</button>
       ) : (
