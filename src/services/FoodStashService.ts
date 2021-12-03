@@ -14,3 +14,16 @@ export const addProfile = (uid: string): Promise<Profile> => {
     .post(`${baseURL}/profiles/${encodeURIComponent(uid)}`)
     .then((response) => response.data);
 };
+
+export const updateProfile = (
+  uid: string,
+  category: string
+): Promise<Profile> => {
+  return axios
+    .put(
+      `${baseURL}/profiles/${encodeURIComponent(uid)}/${encodeURIComponent(
+        category
+      )}`
+    )
+    .then((response) => response.data);
+};

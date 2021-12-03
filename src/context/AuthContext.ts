@@ -1,5 +1,5 @@
 import { User } from "firebase/auth";
-import { createContext, Profiler } from "react";
+import { createContext } from "react";
 import Profile from "../models/Profile";
 export interface AuthContextModel {
   user: User | null; // null when not logged in

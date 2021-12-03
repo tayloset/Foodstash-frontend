@@ -11,10 +11,10 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     return auth.onAuthStateChanged((newUser) => {
       setUser(newUser);
-      if (user) {
-        getProfile(user.uid).then((array) => {
+      if (newUser) {
+        getProfile(newUser.uid).then((array) => {
           if (array.length === 0) {
-            addProfile(user.uid).then((response) => {
+            addProfile(newUser.uid).then((response) => {
               console.log(response);
               setProfile(response);
             });
