@@ -1,14 +1,14 @@
 import Recipes from "../models/Recipes";
-import "./Favorites.css";
 import RecipeItem from "./RecipeItem";
+import "./RecipeList.css";
 
 interface Props {
   recipe: Recipes[];
 }
 
-const Favorites = ({ recipe }: Props) => {
+const RecipeList = ({ recipe }: Props) => {
   return (
-    <ul className="Favorites">
+    <ul className="RecipeList">
       {recipe.map((item) => (
         <RecipeItem item={item} key={item?._id} />
       ))}
@@ -16,4 +16,4 @@ const Favorites = ({ recipe }: Props) => {
   );
 };
 
-export default Favorites;
+export default RecipeList;
