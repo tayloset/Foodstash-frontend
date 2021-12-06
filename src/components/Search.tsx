@@ -14,6 +14,9 @@ const Search = () => {
 
   return (
     <div className="Search">
+      <label htmlFor="searchFor"></label>
+      <input type="search" name="searchFor" id="searchFor" />
+      <button>Search</button>
       <button onClick={displayCuisines}>Cuisines</button>
       {!cuisineClicked ? (
         <></>
