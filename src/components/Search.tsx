@@ -16,7 +16,6 @@ const Search = () => {
     <div className="Search">
       <label htmlFor="searchFor"></label>
       <input type="search" name="searchFor" id="searchFor" />
-      <button>Search</button>
       <button onClick={displayCuisines}>Cuisines</button>
       {!cuisineClicked ? (
         <></>
@@ -76,6 +75,7 @@ const Search = () => {
           <input type="checkbox" name="vietnamese" id="vietnamese" />
         </div>
       )}
+      <button>Search</button>
     </div>
   );
 };

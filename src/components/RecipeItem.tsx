@@ -6,7 +6,12 @@ interface Props {
 }
 
 const RecipeItem = ({ item }: Props) => {
-  return <div className="RecipeItem"></div>;
+  return (
+    <div className="RecipeItem">
+      <i className="far fa-star"></i>
+      <i className="fas fa-star"></i>
+    </div>
+  );
 };
 
 export default RecipeItem;
