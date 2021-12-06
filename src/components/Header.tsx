@@ -11,8 +11,8 @@ const Header = () => {
 
   return (
     <header className="Header">
+      <img src={Logo} alt="Logo" className="logo" />
       <Link to="/">
-        <img src={Logo} alt="Logo" />
         <h1>Foodstash</h1>
       </Link>
       {user ? (
