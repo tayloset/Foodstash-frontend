@@ -3,11 +3,22 @@ import { User } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import AuthContext from "./AuthContext";
 import Profile from "../models/Profile";
-import { addProfile, getProfile } from "../services/FoodStashService";
+import {
+  addProfile,
+  getProfile,
+  updateProfile,
+} from "../services/FoodStashService";
 
 function AuthContextProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
+
+  const updateProfileHandler = (category: string, updateData: string): void => {
+    updateProfile(profile?.uid!, category, updateData).then(() => {
+      getProfile(user?.uid!).then((array) => setProfile(array[0]));
+    });
+  };
+
   useEffect(() => {
     return auth.onAuthStateChanged((newUser) => {
       setUser(newUser);
@@ -28,7 +39,7 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
     });
   }, []);
   return (
-    <AuthContext.Provider value={{ user, profile }}>
+    <AuthContext.Provider value={{ user, profile, updateProfileHandler }}>
       {children}
     </AuthContext.Provider>
   );
