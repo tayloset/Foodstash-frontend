@@ -11,27 +11,27 @@ const Navigation = () => {
   return (
     <div className="Navigation">
       <Link to="/">
-        <img src={Search} />
+        <img src={Search} alt="Search" />
         <p>Search</p>
       </Link>
       <Link to="/pantry">
-        <img src={Pantry} />
+        <img src={Pantry} alt="Pantry" />
         <p>Pantry</p>
       </Link>
       <Link to="/diet">
-        <img src={Diet} />
+        <img src={Diet} alt="Diet" />
         <p>Diet</p>
       </Link>
       <Link to="/intolerances">
-        <img src={Intolerances} />
+        <img src={Intolerances} alt="Intolerances" />
         <p>Intolerances</p>
       </Link>
       <Link to="/equipment">
-        <img src={Equipment} />
+        <img src={Equipment} alt="Equipment" />
         <p>Equipment</p>
       </Link>
       <Link to="/favorites">
-        <img src={Favorites} />
+        <img src={Favorites} alt="Favorites" />
         <p>Favorites</p>
       </Link>
     </div>

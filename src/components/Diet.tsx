@@ -1,7 +1,16 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import "./Diet.css";
 
 const Diet = () => {
+  const [diets, setDiets] = useState(new Array(11).fill(false));
+  console.log(diets);
+
+  const handleOnChange = (position: number) => {
+    const updatedCheckedState = diets.map((item, index) =>
+      index === position ? !item : item
+    );
+    setDiets(updatedCheckedState);
+  };
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
   };
@@ -13,7 +22,8 @@ const Diet = () => {
         type="checkbox"
         id="glutenFree"
         name="glutenFree"
-        value="glutenFree"
+        checked={diets[0]}
+        onChange={() => handleOnChange(0)}
       />
       <p>
         Eliminating gluten means avoiding wheat, barley, rye, and other
@@ -26,7 +36,8 @@ const Diet = () => {
         type="checkbox"
         id="ketogenic"
         name="ketogenic"
-        value="ketogenic"
+        checked={diets[1]}
+        onChange={() => handleOnChange(1)}
       />
       <p>
         The keto diet is based more on the ratio of fat, protein, and carbs in
@@ -41,7 +52,8 @@ const Diet = () => {
         type="checkbox"
         id="vegetarian"
         name="vegetarian"
-        value="vegetarian"
+        checked={diets[2]}
+        onChange={() => handleOnChange(2)}
       />
       <p>
         No ingredients may contain meat or meat by-products, such as bones or
@@ -53,7 +65,8 @@ const Diet = () => {
         type="checkbox"
         id="lactoVegetarian"
         name="lactoVegetarian"
-        value="lactoVegetarian"
+        checked={diets[3]}
+        onChange={() => handleOnChange(3)}
       />
       <p>
         All ingredients must be vegetarian and none of the ingredients can be or
@@ -65,7 +78,8 @@ const Diet = () => {
         type="checkbox"
         id="ovoVegetarian"
         name="ovoVegetarian"
-        value="ovoVegetarian"
+        checked={diets[4]}
+        onChange={() => handleOnChange(4)}
       />
       <p>
         All ingredients must be vegetarian and none of the ingredients can be or
@@ -73,7 +87,13 @@ const Diet = () => {
       </p>
 
       <label htmlFor="vegan">Vegan</label>
-      <input type="checkbox" id="vegan" name="vegan" value="vegan" />
+      <input
+        type="checkbox"
+        id="vegan"
+        name="vegan"
+        checked={diets[5]}
+        onChange={() => handleOnChange(5)}
+      />
       <p>
         No ingredients may contain meat or meat by-products, such as bones or
         gelatin, nor may they contain eggs, dairy, or honey.
@@ -84,7 +104,8 @@ const Diet = () => {
         type="checkbox"
         id="pescetarian"
         name="pescetarian"
-        value="pescetarian"
+        checked={diets[6]}
+        onChange={() => handleOnChange(6)}
       />
       <p>
         Everything is allowed except meat and meat by-products - some
@@ -92,7 +113,13 @@ const Diet = () => {
       </p>
 
       <label htmlFor="paleo">Paleo</label>
-      <input type="checkbox" id="paleo" name="paleo" value="paleo" />
+      <input
+        type="checkbox"
+        id="paleo"
+        name="paleo"
+        checked={diets[7]}
+        onChange={() => handleOnChange(7)}
+      />
       <p>
         Allowed ingredients include meat (especially grass fed), fish, eggs,
         vegetables, some oils (e.g. coconut and olive oil), and in smaller
@@ -103,7 +130,13 @@ const Diet = () => {
       </p>
 
       <label htmlFor="primal">Primal</label>
-      <input type="checkbox" id="primal" name="primal" value="primal" />
+      <input
+        type="checkbox"
+        id="primal"
+        name="primal"
+        checked={diets[8]}
+        onChange={() => handleOnChange(8)}
+      />
       <p>
         Very similar to Paleo, except dairy is allowed - think raw and full fat
         milk, butter, ghee, etc.
@@ -114,7 +147,8 @@ const Diet = () => {
         type="checkbox"
         id="lowFODMAP"
         name="lowFODMAP"
-        value="lowFODMAP"
+        checked={diets[9]}
+        onChange={() => handleOnChange(9)}
       />
       <p>
         FODMAP stands for "fermentable oligo-, di-, mono-saccharides and
@@ -123,7 +157,13 @@ const Diet = () => {
       </p>
 
       <label htmlFor="whole30">Whole30</label>
-      <input type="checkbox" id="whole30" name="whole30" value="whole30" />
+      <input
+        type="checkbox"
+        id="whole30"
+        name="whole30"
+        checked={diets[10]}
+        onChange={() => handleOnChange(10)}
+      />
       <p>
         Allowed ingredients include meat, fish/seafood, eggs, vegetables, fresh
         fruit, coconut oil, olive oil, small amounts of dried fruit and
