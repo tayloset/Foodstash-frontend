@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="Header">
       <Link to="/">
-        <img src={Logo} />
+        <img src={Logo} alt="Logo" />
         <h1>Foodstash</h1>
       </Link>
       {user ? (

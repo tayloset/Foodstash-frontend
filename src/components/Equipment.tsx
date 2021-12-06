@@ -25,7 +25,14 @@ const Equipment = () => {
         />
         <button>Add</button>
       </form>
-      <ul></ul>
+      <ul>
+        {/* {.map((item) => (
+          <li>
+            {item.}
+            <button onClick={() => (item._id!)}>X</button>
+          </li>
+        ))} */}
+      </ul>
     </div>
   );
 };
