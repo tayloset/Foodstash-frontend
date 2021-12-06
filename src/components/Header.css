@@ -2,7 +2,21 @@
   text-decoration: none;
 }
 
-.Header img {
+.Header .logo {
   width: 6%;
-  height: 6%;
+}
+
+.Header {
+  background-image: url(../assets/Banner.png);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header button {
+  margin-right: 5px;
+}
+
+.Header h1 {
+  display: absolute;
 }
