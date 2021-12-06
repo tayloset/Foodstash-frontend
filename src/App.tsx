@@ -8,10 +8,10 @@ import Diet from "./components/Diet";
 import Equipment from "./components/Equipment";
 import Favorites from "./components/Favorites";
 import Header from "./components/Header";
+import Search from "./components/Search";
 import Intolerances from "./components/Intolerances";
 import Navigation from "./components/Navigation";
 import Pantry from "./components/Pantry";
-import Search from "./components/Search";
 
 function App() {
   return (

@@ -38,16 +38,22 @@ export const updateProfile = (
 };
 
 export const searchRecipes = (qsp: any): Promise<Recipe[]> => {
-  return axios.get(`${spoonacularBaseURL}/complexSearch`, {
-    params: {
-      apiKey: spoonacularApiKey,
-      ...(qsp.searchTerm ? { query: qsp.searchTerm } : {}),
-      ...(qsp.searchCuisine ? { cuisine: qsp.searchCuisine } : {}),
-      ...(qsp.searchDiet ? { diet: qsp.searchDiet } : {}),
-      ...(qsp.searchIntolerances
-        ? { intolerances: qsp.searchIntolerances }
-        : {}),
-      ...(qsp.searchEquipment ? { equipment: qsp.searchEquipment } : {}),
-    },
-  });
+  console.log(spoonacularApiKey);
+  return axios
+    .get(`${spoonacularBaseURL}/complexSearch`, {
+      params: {
+        apiKey: spoonacularApiKey,
+        ...(qsp.searchTerm ? { query: qsp.searchTerm } : {}),
+        ...(qsp.searchCuisine ? { cuisine: qsp.searchCuisine } : {}),
+        // ...(qsp.searchDiet ? { diet: qsp.searchDiet } : {}),
+        // ...(qsp.searchIntolerances
+        //   ? { intolerances: qsp.searchIntolerances }
+        //   : {}),
+        // ...(qsp.searchEquipment ? { equipment: qsp.searchEquipment } : {}),
+      },
+    })
+    .then((response) => {
+      console.log(response);
+      return response.data;
+    });
 };
