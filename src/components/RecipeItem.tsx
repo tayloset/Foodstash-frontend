@@ -1,4 +1,4 @@
-import Recipes from "../models/Recipes";
+import Recipes from "../models/Recipe";
 import "./RecipeItem.css";
 
 interface Props {

@@ -1,9 +1,9 @@
-import Recipes from "../models/Recipes";
+import Recipe from "../models/Recipe";
 import RecipeItem from "./RecipeItem";
 import "./RecipeList.css";
 
 interface Props {
-  recipe: Recipes[];
+  recipe: Recipe[];
 }
 
 const RecipeList = ({ recipe }: Props) => {
