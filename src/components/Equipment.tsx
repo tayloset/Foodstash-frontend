@@ -1,14 +1,15 @@
 import { FormEvent, useContext, useState } from "react";
-import UpdateProfileContext from "../context/UpdateProfileContext";
+import AuthContext from "../context/AuthContext";
 import "./Equipment.css";
 
 const Equipment = () => {
-  const { updateProfileHandler } = useContext(UpdateProfileContext);
+  const { profile, updateProfileHandler } = useContext(AuthContext);
   const [equipment, setEquipment] = useState("");
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
     updateProfileHandler("equipment", equipment);
+    console.log(equipment);
   };
 
   return (
@@ -26,12 +27,12 @@ const Equipment = () => {
         <button>Add</button>
       </form>
       <ul>
-        {/* {.map((item) => (
+        {profile?.equipment.map((item) => (
           <li>
-            {item.}
-            <button onClick={() => (item._id!)}>X</button>
+            {item}
+            {/* <button onClick={() => (item._id!)}>X</button> */}
           </li>
-        ))} */}
+        ))}
       </ul>
     </div>
   );

@@ -31,6 +31,8 @@ export const updateProfile = (
       { updateData }
     )
     .then((response) => {
+      console.log(response.data);
+      console.log(updateData);
       return response.data;
     });
 };
