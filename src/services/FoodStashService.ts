@@ -1,7 +1,10 @@
 import axios from "axios";
 import Profile from "../models/Profile";
+import Recipe from "../models/Recipe";
 
 const baseURL: string = process.env.REACT_APP_API_URL || "";
+const spoonacularBaseURL: string = process.env.SPOONACULAR_API_URL || "";
+const spoonacularApiKey: string = process.env.SPOONACULAR_API_KEY || "";
 
 export const getProfile = (uid: string): Promise<Profile[]> => {
   return axios
@@ -30,4 +33,19 @@ export const updateProfile = (
     .then((response) => {
       return response.data;
     });
+};
+
+export const searchRecipes = (qsp: any): Promise<Recipe[]> => {
+  return axios.get(`${spoonacularBaseURL}/complexSearch`, {
+    params: {
+      apiKey: spoonacularApiKey,
+      ...(qsp.searchTerm ? { query: qsp.searchTerm } : {}),
+      ...(qsp.searchCuisine ? { cuisine: qsp.searchCuisine } : {}),
+      ...(qsp.searchDiet ? { diet: qsp.searchDiet } : {}),
+      ...(qsp.searchIntolerances
+        ? { intolerances: qsp.searchIntolerances }
+        : {}),
+      ...(qsp.searchEquipment ? { equipment: qsp.searchEquipment } : {}),
+    },
+  });
 };
