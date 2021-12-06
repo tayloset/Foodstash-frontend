@@ -1,9 +1,9 @@
 import { FormEvent, useContext, useState } from "react";
 import "./Pantry.css";
-import UpdateProfileContext from "../context/UpdateProfileContext";
+import AuthContext from "../context/AuthContext";
 
 const Pantry = () => {
-  const { updateProfileHandler } = useContext(UpdateProfileContext);
+  const { profile, updateProfileHandler } = useContext(AuthContext);
   const [pantry, setPantry] = useState("");
 
   const submitHandler = (e: FormEvent) => {
@@ -25,7 +25,14 @@ const Pantry = () => {
         />
         <button>Add</button>
       </form>
-      <ul></ul>
+      <ul>
+        {profile?.pantry.map((item) => (
+          <li>
+            {item}
+            {/* <button onClick={() => (item._id!)}>X</button> */}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

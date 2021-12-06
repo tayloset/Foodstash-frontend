@@ -7,7 +7,6 @@ import Logo from "../assets/Logo.png";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   return (
     <header className="Header">

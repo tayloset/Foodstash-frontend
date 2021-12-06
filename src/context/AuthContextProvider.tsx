@@ -16,6 +16,8 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
   const updateProfileHandler = (category: string, updateData: string): void => {
     updateProfile(profile?.uid!, category, updateData).then(() => {
       getProfile(user?.uid!).then((array) => setProfile(array[0]));
+      console.log(updateData);
+      console.log(profile);
     });
   };
 
