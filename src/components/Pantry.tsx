@@ -1,7 +1,6 @@
 import { FormEvent, useContext, useState } from "react";
 import "./Pantry.css";
 import AuthContext from "../context/AuthContext";
-import { updateProfileV2 } from "../services/FoodStashService";
 
 const Pantry = () => {
   const { profile, updateProfileHandler } = useContext(AuthContext);

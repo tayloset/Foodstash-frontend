@@ -1,7 +1,9 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
+import AuthContext from "../context/AuthContext";
 import "./Intolerances.css";
 
 const Intolerances = () => {
+  const { profile, updateProfileHandler } = useContext(AuthContext);
   const [intolerances, setIntolerances] = useState(new Array(12).fill(false));
   const intolerancesNameArray = [
     "dairy",
@@ -17,7 +19,6 @@ const Intolerances = () => {
     "treeNut",
     "wheat",
   ];
-  let intolerancesString = "";
 
   const handleOnChange = (position: number) => {
     const updatedCheckedState = intolerances.map((item, index) =>
@@ -28,12 +29,18 @@ const Intolerances = () => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    intolerancesString = "";
+    let intolerancesString = "";
     intolerances.forEach((intolerance, index) => {
       if (intolerance) {
-        intolerancesString += `,${intolerancesNameArray[index]}`;
+        intolerancesString
+          ? (intolerancesString += `,${intolerancesNameArray[index]}`)
+          : (intolerancesString += `${intolerancesNameArray[index]}`);
       }
     });
+    const updatedProfile: any = { ...profile };
+    updatedProfile.intolerances = intolerancesString;
+    delete updatedProfile._id;
+    updateProfileHandler(updatedProfile);
   };
 
   return (

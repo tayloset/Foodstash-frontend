@@ -17,7 +17,7 @@ const Favorites = ({ recipes }: Props) => {
   return (
     <ul className="Favorites">
       {recipes.map((recipe) => (
-        <RecipeItem recipe={recipe} key={recipe?._id} />
+        <RecipeItem recipe={recipe} key={recipe?._id!} />
       ))}
     </ul>
   );

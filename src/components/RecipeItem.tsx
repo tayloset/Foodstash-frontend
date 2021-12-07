@@ -3,13 +3,14 @@ import "./RecipeItem.css";
 
 interface Props {
   recipe: Recipe;
+  key: number;
 }
 
-const RecipeItem = ({ recipe }: Props) => {
+const RecipeItem = ({ recipe, key }: Props) => {
   return (
-    <div className="RecipeItem">
+    <div className="RecipeItem" key={key}>
       <p>{recipe.title}</p>
-      <img src={recipe.image} />
+      <img src={recipe.image} alt={recipe.imageType} />
       <i className="far fa-star"></i>
       <i className="fas fa-star"></i>
     </div>
