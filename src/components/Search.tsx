@@ -1,5 +1,6 @@
-import { FormEvent, useContext, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
+import Recipe from "../models/Recipe";
 import { searchRecipes } from "../services/FoodStashService";
 import RecipeList from "./RecipeList";
 import "./Search.css";
@@ -36,9 +37,7 @@ const Search = () => {
     "vietnamese",
   ];
   let cuisineString: string = "";
-  const [recipes, setRecipes] = useState([
-    { title: "", image: "", imageType: "" },
-  ]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const { profile } = useContext(AuthContext);
 
   const handleOnChange = (position: number) => {
@@ -82,6 +81,14 @@ const Search = () => {
       );
     }
   };
+
+  useEffect(() => {
+    searchRecipes({ searchIntolerances: profile!?.intolerances }).then(
+      (data) => {
+        setRecipes(data.results);
+      }
+    );
+  }, []);
 
   return (
     <div>
