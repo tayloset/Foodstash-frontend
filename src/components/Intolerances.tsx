@@ -3,7 +3,21 @@ import "./Intolerances.css";
 
 const Intolerances = () => {
   const [intolerances, setIntolerances] = useState(new Array(12).fill(false));
-  console.log(intolerances);
+  const intolerancesNameArray = [
+    "dairy",
+    "egg",
+    "gluten",
+    "grain",
+    "peanut",
+    "seafood",
+    "sesame",
+    "shellfish",
+    "soy",
+    "sulfite",
+    "treeNut",
+    "wheat",
+  ];
+  let intolerancesString = "";
 
   const handleOnChange = (position: number) => {
     const updatedCheckedState = intolerances.map((item, index) =>
@@ -14,6 +28,12 @@ const Intolerances = () => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
+    intolerancesString = "";
+    intolerances.forEach((intolerance, index) => {
+      if (intolerance) {
+        intolerancesString += `,${intolerancesNameArray[index]}`;
+      }
+    });
   };
 
   return (

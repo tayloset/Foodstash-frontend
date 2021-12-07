@@ -1,6 +1,5 @@
-import { FormEvent, useState } from "react";
-import Recipe from "../models/Recipe";
-import SearchResult from "../models/SearchResult";
+import { FormEvent, useContext, useState } from "react";
+import AuthContext from "../context/AuthContext";
 import { searchRecipes } from "../services/FoodStashService";
 import RecipeList from "./RecipeList";
 import "./Search.css";
@@ -40,6 +39,7 @@ const Search = () => {
   const [recipes, setRecipes] = useState([
     { title: "", image: "", imageType: "" },
   ]);
+  const { profile } = useContext(AuthContext);
 
   const handleOnChange = (position: number) => {
     const updatedCheckedState = cuisineArray.map((item, index) =>
@@ -59,16 +59,28 @@ const Search = () => {
 
   const searchHandler = (e: FormEvent) => {
     e.preventDefault();
+    cuisineString = "";
     cuisineArray.forEach((cuisine, index) => {
       if (cuisine) {
         cuisineString += `,${cuisineNameArray[index]}`;
       }
     });
-    searchRecipes({ searchTerm, searchCuisine: cuisineString }).then((data) => {
-      setRecipes(data.results);
-      // const searchResult: SearchResult = searchRecipes({ searchTerm, searchCuisine: cuisineString });
-      // const recipes: Recipe[] = searchResult.results
-    });
+    if (profile) {
+      searchRecipes({
+        searchTerm,
+        searchCuisine: cuisineString,
+        // searchDiet: profile!.diet,
+        searchIntolerances: profile!.intolerances,
+      }).then((data) => {
+        setRecipes(data.results);
+      });
+    } else {
+      searchRecipes({ searchTerm, searchCuisine: cuisineString }).then(
+        (data) => {
+          setRecipes(data.results);
+        }
+      );
+    }
   };
 
   return (
