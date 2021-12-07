@@ -1,5 +1,7 @@
 import { FormEvent, useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
+import Profile from "../models/Profile";
+import { updateProfileV2 } from "../services/FoodStashService";
 import "./Equipment.css";
 
 const Equipment = () => {
@@ -10,6 +12,13 @@ const Equipment = () => {
     e.preventDefault();
     updateProfileHandler("equipment", equipment);
     console.log(equipment);
+  };
+
+  const updateEquipmentHandler = (index: number) => {
+    const updatedProfile: any = { ...profile };
+    updatedProfile.equipment.splice(index, 1);
+    delete updatedProfile._id;
+    updateProfileV2(updatedProfile).then((response) => console.log(response));
   };
 
   return (
@@ -30,7 +39,7 @@ const Equipment = () => {
         {profile?.equipment.map((item, index) => (
           <li key={`${item}${index}`}>
             {item}
-            {/* <button onClick={() => (item._id!)}>X</button> */}
+            <button onClick={() => updateEquipmentHandler(index)}>X</button>
           </li>
         ))}
       </ul>

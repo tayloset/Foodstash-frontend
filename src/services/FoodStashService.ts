@@ -1,4 +1,5 @@
 import axios from "axios";
+import { resolveProjectReferencePath } from "typescript";
 import Profile from "../models/Profile";
 import Recipe from "../models/Recipe";
 import SearchResult from "../models/SearchResult";
@@ -60,4 +61,14 @@ export const searchRecipes = (qsp: any): Promise<SearchResult> => {
       console.log(response);
       return response.data;
     });
+};
+
+export const updateProfileV2 = (updatedProfile: Profile): Promise<Profile> => {
+  console.log(updatedProfile);
+  return axios
+    .put(
+      `${baseURL}/profiles/${encodeURIComponent(updatedProfile.uid!)}`,
+      updatedProfile
+    )
+    .then((response) => response.data);
 };
