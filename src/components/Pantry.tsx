@@ -1,27 +1,38 @@
 import { FormEvent, useContext, useState } from "react";
 import "./Pantry.css";
 import AuthContext from "../context/AuthContext";
+import { updateProfileV2 } from "../services/FoodStashService";
 
 const Pantry = () => {
   const { profile, updateProfileHandler } = useContext(AuthContext);
-  const [pantry, setPantry] = useState("");
+  const [foodItem, setFoodItem] = useState("");
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    updateProfileHandler("pantry", pantry);
+    const updatedProfile: any = { ...profile };
+    updatedProfile.pantry.push(foodItem);
+    delete updatedProfile._id;
+    updateProfileHandler(updatedProfile);
+  };
+
+  const deleteFoodHandler = (index: number) => {
+    const updatedProfile: any = { ...profile };
+    updatedProfile.pantry.splice(index, 1);
+    delete updatedProfile._id;
+    updateProfileHandler(updatedProfile);
   };
 
   return (
-    <div className="Pantry" onSubmit={submitHandler}>
-      <form>
-        <label htmlFor="pantry">Add Items to your Pantry!</label>
+    <div className="Pantry">
+      <form onSubmit={submitHandler}>
+        <label htmlFor="foodItem">Add Items to your Pantry!</label>
         <input
           type="text"
-          name="pantry"
-          id="pantry"
+          name="foodItem"
+          id="foodItem"
           placeholder="Add Item"
-          value={pantry}
-          onChange={(e) => setPantry(e.target.value)}
+          value={foodItem}
+          onChange={(e) => setFoodItem(e.target.value)}
         />
         <button>Add</button>
       </form>
@@ -29,7 +40,7 @@ const Pantry = () => {
         {profile?.pantry.map((item, index) => (
           <li key={`${item}${index}`}>
             {item}
-            {/* <button onClick={() => (item._id!)}>X</button> */}
+            <button onClick={() => deleteFoodHandler(index)}>X</button>
           </li>
         ))}
       </ul>

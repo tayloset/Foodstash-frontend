@@ -4,7 +4,7 @@ import Profile from "../models/Profile";
 export interface AuthContextModel {
   user: User | null; // null when not logged in
   profile: Profile | null; // null when not logged in
-  updateProfileHandler: (category: string, updateData: any) => void;
+  updateProfileHandler: (updatedProfile: Profile) => void;
 }
 const defaultValue: AuthContextModel = {
   user: null,
