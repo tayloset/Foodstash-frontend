@@ -1,7 +1,5 @@
 import axios from "axios";
-import { resolveProjectReferencePath } from "typescript";
 import Profile from "../models/Profile";
-import Recipe from "../models/Recipe";
 import SearchResult from "../models/SearchResult";
 
 const baseURL: string = process.env.REACT_APP_API_URL || "";
@@ -51,9 +49,9 @@ export const searchRecipes = (qsp: any): Promise<SearchResult> => {
         ...(qsp.searchTerm ? { query: qsp.searchTerm } : {}),
         ...(qsp.searchCuisine ? { cuisine: qsp.searchCuisine } : {}),
         // ...(qsp.searchDiet ? { diet: qsp.searchDiet } : {}),
-        // ...(qsp.searchIntolerances
-        //   ? { intolerances: qsp.searchIntolerances }
-        //   : {}),
+        ...(qsp.searchIntolerances
+          ? { intolerances: qsp.searchIntolerances }
+          : {}),
         // ...(qsp.searchEquipment ? { equipment: qsp.searchEquipment } : {}),
       },
     })

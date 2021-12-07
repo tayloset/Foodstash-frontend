@@ -1,5 +1,5 @@
 export default interface Recipe {
-  _id?: string;
+  _id?: number;
   title: string;
   image: string;
   imageType: string;

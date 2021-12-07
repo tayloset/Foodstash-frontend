@@ -10,7 +10,7 @@ const RecipeList = ({ recipes }: Props) => {
   return (
     <ul className="RecipeList">
       {recipes.map((recipe) => (
-        <RecipeItem recipe={recipe} key={recipe?._id} />
+        <RecipeItem recipe={recipe} key={recipe?._id!} />
       ))}
     </ul>
   );
