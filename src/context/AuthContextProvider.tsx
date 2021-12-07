@@ -6,18 +6,17 @@ import Profile from "../models/Profile";
 import {
   addProfile,
   getProfile,
-  updateProfile,
+  updateProfileV2,
 } from "../services/FoodStashService";
 
 function AuthContextProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
 
-  const updateProfileHandler = (category: string, updateData: string): void => {
-    updateProfile(profile?.uid!, category, updateData).then(() => {
-      getProfile(user?.uid!).then((array) => setProfile(array[0]));
-      console.log(updateData);
-      console.log(profile);
+  const updateProfileHandler = (updatedProfile: Profile): void => {
+    updateProfileV2(updatedProfile).then(() => {
+      getProfile(updatedProfile?.uid!).then((array) => setProfile(array[0]));
+      console.log(updatedProfile);
     });
   };
 
