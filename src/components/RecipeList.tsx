@@ -3,14 +3,14 @@ import RecipeItem from "./RecipeItem";
 import "./RecipeList.css";
 
 interface Props {
-  recipe: Recipe[];
+  recipes: Recipe[];
 }
 
-const RecipeList = ({ recipe }: Props) => {
+const RecipeList = ({ recipes }: Props) => {
   return (
     <ul className="RecipeList">
-      {recipe.map((item) => (
-        <RecipeItem item={item} key={item?._id} />
+      {recipes.map((recipe) => (
+        <RecipeItem recipe={recipe} key={recipe?._id} />
       ))}
     </ul>
   );

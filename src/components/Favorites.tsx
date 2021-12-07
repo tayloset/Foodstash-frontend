@@ -1,14 +1,14 @@
 // import { useContext } from "react";
 // import { useHistory } from "react-router";
-import Recipes from "../models/Recipe";
+import Recipe from "../models/Recipe";
 import "./Favorites.css";
 import RecipeItem from "./RecipeItem";
 
 interface Props {
-  recipe: Recipes[];
+  recipes: Recipe[];
 }
 
-const Favorites = ({ recipe }: Props) => {
+const Favorites = ({ recipes }: Props) => {
   // const history = useHistory();
   // const seeDetails = (id: string): void => {
   //   history.push(`/recipes/${encodeURIComponent(id)}/details`);
@@ -16,8 +16,8 @@ const Favorites = ({ recipe }: Props) => {
   // const {addFavorite, removeFavorite, isFav} = useContext(FavoritesContext)
   return (
     <ul className="Favorites">
-      {recipe.map((item) => (
-        <RecipeItem item={item} key={item?._id} />
+      {recipes.map((recipe) => (
+        <RecipeItem recipe={recipe} key={recipe?._id} />
       ))}
     </ul>
   );

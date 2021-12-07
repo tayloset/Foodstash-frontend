@@ -27,8 +27,8 @@ const Equipment = () => {
         <button>Add</button>
       </form>
       <ul>
-        {profile?.equipment.map((item) => (
-          <li>
+        {profile?.equipment.map((item, index) => (
+          <li key={`${item}${index}`}>
             {item}
             {/* <button onClick={() => (item._id!)}>X</button> */}
           </li>

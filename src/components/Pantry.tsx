@@ -26,8 +26,8 @@ const Pantry = () => {
         <button>Add</button>
       </form>
       <ul>
-        {profile?.pantry.map((item) => (
-          <li>
+        {profile?.pantry.map((item, index) => (
+          <li key={`${item}${index}`}>
             {item}
             {/* <button onClick={() => (item._id!)}>X</button> */}
           </li>
