@@ -35,9 +35,9 @@ function App() {
           <Route path="/intolerances" exact>
             <Intolerances />
           </Route>
-          {/* <Route path="/favorites" exact>
+          <Route path="/favorites" exact>
             <Favorites />
-          </Route> */}
+          </Route>
           <Route path="/recipe/:id" exact>
             <RecipeDetails />
           </Route>

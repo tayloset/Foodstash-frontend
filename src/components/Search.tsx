@@ -1,7 +1,7 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import Recipe from "../models/Recipe";
-import { searchRecipes, searchRecipesV2 } from "../services/FoodStashService";
+import { searchRecipesV2 } from "../services/FoodStashService";
 import RecipeList from "./RecipeList";
 import "./Search.css";
 
