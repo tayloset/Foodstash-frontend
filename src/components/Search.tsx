@@ -85,10 +85,11 @@ const Search = () => {
   };
 
   // useEffect(() => {
-  //   searchRecipesV2({}).then((data) => {
-  //     console.log(data);
-  //     setRecipes(data.results);
-  //   });
+  //   searchRecipes({ searchIntolerances: profile!?.intolerances }).then(
+  //     (data) => {
+  //       setRecipes(data.results);
+  //     }
+  //   );
   // }, []);
 
   return (

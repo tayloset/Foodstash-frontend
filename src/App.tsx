@@ -12,6 +12,7 @@ import Search from "./components/Search";
 import Intolerances from "./components/Intolerances";
 import Navigation from "./components/Navigation";
 import Pantry from "./components/Pantry";
+import RecipeDetails from "./components/RecipeDetails";
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
           {/* <Route path="/favorites" exact>
             <Favorites />
           </Route> */}
+          <Route path="/recipe/:id" exact>
+            <RecipeDetails />
+          </Route>
           <Route path="/">
             <Redirect to="/" />
           </Route>

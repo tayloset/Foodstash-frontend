@@ -1,4 +1,5 @@
 import axios from "axios";
+import Details from "../models/Details";
 import Profile from "../models/Profile";
 import Recipe from "../models/Recipe";
 import SearchResult from "../models/SearchResult";
@@ -61,6 +62,20 @@ export const searchRecipes = (qsp: any): Promise<SearchResult> => {
     });
 };
 
+export const getRecipeDetails = (recipeId: any): Promise<Details> => {
+  return axios
+    .get(`${spoonacularBaseURL}/${encodeURIComponent(recipeId)}/information`, {
+      params: {
+        apiKey: spoonacularApiKey,
+        id: recipeId,
+        includeNutrition: false,
+      },
+    })
+    .then((response) => {
+      console.log(response);
+      return response.data;
+    });
+};
 export const searchRecipesV2 = (qsp: any): Promise<Recipe[]> => {
   let initialIDs: string = "";
   return searchRecipes(qsp).then((data) => {
