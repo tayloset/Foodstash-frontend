@@ -82,13 +82,13 @@ const Search = () => {
     }
   };
 
-  useEffect(() => {
-    searchRecipes({ searchIntolerances: profile!?.intolerances }).then(
-      (data) => {
-        setRecipes(data.results);
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   searchRecipes({ searchIntolerances: profile!?.intolerances }).then(
+  //     (data) => {
+  //       setRecipes(data.results);
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div>

@@ -1,3 +1,7 @@
+interface Ingredients {
+  originalString: string;
+}
+
 export default interface Details {
   _id?: string;
   title: string;
@@ -7,4 +11,5 @@ export default interface Details {
   readyInMinutes: number;
   spoonacularScore: number;
   servings: number;
+  extendedIngredients: Ingredients[];
 }

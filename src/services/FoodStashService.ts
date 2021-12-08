@@ -1,4 +1,5 @@
 import axios from "axios";
+import Details from "../models/Details";
 import Profile from "../models/Profile";
 import SearchResult from "../models/SearchResult";
 
@@ -45,7 +46,8 @@ export const searchRecipes = (qsp: any): Promise<SearchResult> => {
     .get(`${spoonacularBaseURL}/complexSearch`, {
       params: {
         apiKey: spoonacularApiKey,
-        number: 100,
+        number: 2,
+        //change back to 100 for final presentation
         ...(qsp.searchTerm ? { query: qsp.searchTerm } : {}),
         ...(qsp.searchCuisine ? { cuisine: qsp.searchCuisine } : {}),
         // ...(qsp.searchDiet ? { diet: qsp.searchDiet } : {}),
@@ -53,6 +55,21 @@ export const searchRecipes = (qsp: any): Promise<SearchResult> => {
           ? { intolerances: qsp.searchIntolerances }
           : {}),
         // ...(qsp.searchEquipment ? { equipment: qsp.searchEquipment } : {}),
+      },
+    })
+    .then((response) => {
+      console.log(response);
+      return response.data;
+    });
+};
+
+export const getRecipeDetails = (recipeId: any): Promise<Details> => {
+  return axios
+    .get(`${spoonacularBaseURL}/${encodeURIComponent(recipeId)}/information`, {
+      params: {
+        apiKey: spoonacularApiKey,
+        id: recipeId,
+        includeNutrition: false,
       },
     })
     .then((response) => {
