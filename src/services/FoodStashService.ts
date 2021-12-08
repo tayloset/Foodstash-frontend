@@ -1,6 +1,7 @@
 import axios from "axios";
 import Details from "../models/Details";
 import Profile from "../models/Profile";
+import Recipe from "../models/Recipe";
 import SearchResult from "../models/SearchResult";
 
 const baseURL: string = process.env.REACT_APP_API_URL || "";
@@ -41,13 +42,11 @@ export const updateProfile = (
 };
 
 export const searchRecipes = (qsp: any): Promise<SearchResult> => {
-  console.log(spoonacularApiKey);
   return axios
     .get(`${spoonacularBaseURL}/complexSearch`, {
       params: {
         apiKey: spoonacularApiKey,
         number: 2,
-        //change back to 100 for final presentation
         ...(qsp.searchTerm ? { query: qsp.searchTerm } : {}),
         ...(qsp.searchCuisine ? { cuisine: qsp.searchCuisine } : {}),
         // ...(qsp.searchDiet ? { diet: qsp.searchDiet } : {}),
@@ -76,6 +75,27 @@ export const getRecipeDetails = (recipeId: any): Promise<Details> => {
       console.log(response);
       return response.data;
     });
+};
+export const searchRecipesV2 = (qsp: any): Promise<Recipe[]> => {
+  let initialIDs: string = "";
+  return searchRecipes(qsp).then((data) => {
+    data.results.forEach((recipe) => {
+      initialIDs
+        ? (initialIDs += `,${recipe.id?.toString()}`)
+        : (initialIDs += `${recipe.id?.toString()}`);
+    });
+    return axios
+      .get(`${spoonacularBaseURL}/informationBulk`, {
+        params: {
+          apiKey: spoonacularApiKey,
+          ids: initialIDs,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        return response.data;
+      });
+  });
 };
 
 export const updateProfileV2 = (updatedProfile: Profile): Promise<Profile> => {
