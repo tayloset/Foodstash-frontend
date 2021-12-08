@@ -1,7 +1,7 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import Recipe from "../models/Recipe";
-import { searchRecipes } from "../services/FoodStashService";
+import { searchRecipes, searchRecipesV2 } from "../services/FoodStashService";
 import RecipeList from "./RecipeList";
 import "./Search.css";
 
@@ -65,30 +65,31 @@ const Search = () => {
       }
     });
     if (profile) {
-      searchRecipes({
+      searchRecipesV2({
         searchTerm,
         searchCuisine: cuisineString,
         // searchDiet: profile!.diet,
         searchIntolerances: profile!.intolerances,
       }).then((data) => {
-        setRecipes(data.results);
+        setRecipes(data);
+        console.log(recipes);
       });
     } else {
-      searchRecipes({ searchTerm, searchCuisine: cuisineString }).then(
+      searchRecipesV2({ searchTerm, searchCuisine: cuisineString }).then(
         (data) => {
-          setRecipes(data.results);
+          setRecipes(data);
+          console.log(recipes);
         }
       );
     }
   };
 
-  useEffect(() => {
-    searchRecipes({ searchIntolerances: profile!?.intolerances }).then(
-      (data) => {
-        setRecipes(data.results);
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   searchRecipesV2({}).then((data) => {
+  //     console.log(data);
+  //     setRecipes(data.results);
+  //   });
+  // }, []);
 
   return (
     <div>
