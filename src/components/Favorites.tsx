@@ -1,19 +1,21 @@
-// import { useContext } from "react";
-// import { useHistory } from "react-router";
+import { useContext, useEffect, useState } from "react";
+import AuthContext from "../context/AuthContext";
 import Recipe from "../models/Recipe";
+import { searchByIds } from "../services/FoodStashService";
 import "./Favorites.css";
 import RecipeItem from "./RecipeItem";
 
-interface Props {
-  recipes: Recipe[];
-}
+const Favorites = () => {
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const { profile } = useContext(AuthContext);
 
-const Favorites = ({ recipes }: Props) => {
-  // const history = useHistory();
-  // const seeDetails = (id: string): void => {
-  //   history.push(`/recipes/${encodeURIComponent(id)}/details`);
-  // };
-  // const {addFavorite, removeFavorite, isFav} = useContext(FavoritesContext)
+  useEffect(() => {
+    searchByIds(profile!.favorites).then((data) => {
+      setRecipes(data);
+      console.log(recipes);
+    });
+  }, []);
+
   return (
     <ul className="Favorites">
       {recipes.map((recipe) => (

@@ -84,18 +84,22 @@ export const searchRecipesV2 = (qsp: any): Promise<Recipe[]> => {
         ? (initialIDs += `,${recipe.id?.toString()}`)
         : (initialIDs += `${recipe.id?.toString()}`);
     });
-    return axios
-      .get(`${spoonacularBaseURL}/informationBulk`, {
-        params: {
-          apiKey: spoonacularApiKey,
-          ids: initialIDs,
-        },
-      })
-      .then((response) => {
-        console.log(response);
-        return response.data;
-      });
+    return searchByIds(initialIDs);
   });
+};
+
+export const searchByIds = (ids: string): Promise<Recipe[]> => {
+  return axios
+    .get(`${spoonacularBaseURL}/informationBulk`, {
+      params: {
+        apiKey: spoonacularApiKey,
+        ids,
+      },
+    })
+    .then((response) => {
+      console.log(response);
+      return response.data;
+    });
 };
 
 export const updateProfileV2 = (updatedProfile: Profile): Promise<Profile> => {
