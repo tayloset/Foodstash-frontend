@@ -10,7 +10,7 @@ const Favorites = () => {
   const { profile } = useContext(AuthContext);
 
   useEffect(() => {
-    searchByIds(profile!.favorites).then((data) => {
+    searchByIds(profile!.favorites.toString()).then((data) => {
       setRecipes(data);
       console.log(recipes);
     });
