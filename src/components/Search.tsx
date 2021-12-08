@@ -70,6 +70,8 @@ const Search = () => {
         searchCuisine: cuisineString,
         // searchDiet: profile!.diet,
         searchIntolerances: profile!.intolerances,
+        searchPantry: profile!.pantry.toString(),
+        searchEquipment: profile!.equipment.join(`""`),
       }).then((data) => {
         setRecipes(data);
         console.log(recipes);
