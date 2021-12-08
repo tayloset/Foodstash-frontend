@@ -15,10 +15,8 @@ export default interface Profile {
   _id?: string;
   uid: string;
   pantry: string[];
-  pantryString: string;
   equipment: string[];
-  equipmentString: string;
   diet: Diet;
   intolerances: string;
-  favorites: string;
+  favorites: string[];
 }

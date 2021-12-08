@@ -10,35 +10,15 @@ const Equipment = () => {
     e.preventDefault();
     const updatedProfile: any = { ...profile };
     updatedProfile.equipment.push(equipmentItem);
-    let equipmentString = "";
-    profile?.equipment.forEach((equipment, index) => {
-      if (equipment) {
-        equipmentString
-          ? (equipmentString += `,${profile.equipment[index]}`)
-          : (equipmentString += `${profile.equipment[index]}`);
-      }
-    });
-    updatedProfile.equipmentString = equipmentString;
     delete updatedProfile._id;
     updateProfileHandler(updatedProfile);
-    console.log(equipmentString);
   };
 
   const deleteEquipmentHandler = (index: number) => {
     const updatedProfile: any = { ...profile };
     updatedProfile.equipment.splice(index, 1);
-    let equipmentString = "";
-    profile?.equipment.forEach((equipment, index) => {
-      if (equipment) {
-        equipmentString
-          ? (equipmentString += `,${profile.equipment[index]}`)
-          : (equipmentString += `${profile.equipment[index]}`);
-      }
-    });
-    updatedProfile.equipmentString = equipmentString;
     delete updatedProfile._id;
     updateProfileHandler(updatedProfile);
-    console.log(equipmentString);
   };
 
   return (
