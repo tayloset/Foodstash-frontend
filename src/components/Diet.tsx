@@ -1,9 +1,24 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
+import AuthContext from "../context/AuthContext";
 import "./Diet.css";
 
 const Diet = () => {
+  const { profile, updateProfileHandler } = useContext(AuthContext);
   const [diets, setDiets] = useState(new Array(11).fill(false));
-  console.log(diets);
+  const dietsNameArray = [
+    "gluten free",
+    "ketogenic",
+    "vegetarian",
+    "lacto vegetarian",
+    "ovo vegetarian",
+    "vegan",
+    "pescetarian",
+    "paleo",
+    "primal",
+    "lowFodmap",
+    "whole30",
+  ];
+  let dietsArray: string[] = [""];
 
   const handleOnChange = (position: number) => {
     const updatedCheckedState = diets.map((item, index) =>
@@ -11,8 +26,18 @@ const Diet = () => {
     );
     setDiets(updatedCheckedState);
   };
+
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
+    diets.forEach((diet, index) => {
+      if (diet) {
+        dietsArray.push(dietsNameArray[index]);
+      }
+    });
+    const updatedProfile: any = { ...profile };
+    updatedProfile.diet = dietsArray;
+    delete updatedProfile._id;
+    updateProfileHandler(updatedProfile);
   };
 
   return (
