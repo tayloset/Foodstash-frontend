@@ -8,17 +8,17 @@ const Diet = () => {
   const dietsNameArray = [
     "gluten free",
     "ketogenic",
+    "pescatarian",
     "vegetarian",
     "lacto vegetarian",
     "ovo vegetarian",
     "vegan",
-    "pescetarian",
     "paleo",
     "primal",
     "lowFodmap",
     "whole30",
   ];
-  let dietsArray: string[] = [""];
+  let dietsArray: string[] = [];
 
   const handleOnChange = (position: number) => {
     const updatedCheckedState = diets.map((item, index) =>
@@ -71,70 +71,70 @@ const Diet = () => {
         The formula we use is 55-80% fat content, 15-35% protein content, and
         under 10% of carbohydrates.
       </p>
+      <>
+        <label htmlFor="pescatarian">Pescatarian</label>
+        <input
+          type="checkbox"
+          id="pescatarian"
+          name="pescatarian"
+          checked={diets[2]}
+          onChange={() => handleOnChange(2)}
+        />
+        <p>
+          Everything is allowed except meat and meat by-products - some
+          pescetarians eat eggs and dairy, some do not.{" "}
+        </p>
 
-      <label htmlFor="vegetarian">Vegetarian</label>
-      <input
-        type="checkbox"
-        id="vegetarian"
-        name="vegetarian"
-        checked={diets[2]}
-        onChange={() => handleOnChange(2)}
-      />
-      <p>
-        No ingredients may contain meat or meat by-products, such as bones or
-        gelatin.
-      </p>
+        <label htmlFor="vegetarian">Vegetarian</label>
+        <input
+          type="checkbox"
+          id="vegetarian"
+          name="vegetarian"
+          checked={diets[3]}
+          onChange={() => handleOnChange(3)}
+        />
+        <p>
+          No ingredients may contain meat or meat by-products, such as bones or
+          gelatin.
+        </p>
 
-      <label htmlFor="lactoVegetarian">Lacto-Vegetarian</label>
-      <input
-        type="checkbox"
-        id="lactoVegetarian"
-        name="lactoVegetarian"
-        checked={diets[3]}
-        onChange={() => handleOnChange(3)}
-      />
-      <p>
-        All ingredients must be vegetarian and none of the ingredients can be or
-        contain egg.
-      </p>
+        <label htmlFor="lactoVegetarian">Lacto-Vegetarian</label>
+        <input
+          type="checkbox"
+          id="lactoVegetarian"
+          name="lactoVegetarian"
+          checked={diets[4]}
+          onChange={() => handleOnChange(4)}
+        />
+        <p>
+          All ingredients must be vegetarian and none of the ingredients can be
+          or contain egg.
+        </p>
 
-      <label htmlFor="ovoVegetarian">Ovo-Vegetarian</label>
-      <input
-        type="checkbox"
-        id="ovoVegetarian"
-        name="ovoVegetarian"
-        checked={diets[4]}
-        onChange={() => handleOnChange(4)}
-      />
-      <p>
-        All ingredients must be vegetarian and none of the ingredients can be or
-        contain dairy.
-      </p>
-
-      <label htmlFor="vegan">Vegan</label>
-      <input
-        type="checkbox"
-        id="vegan"
-        name="vegan"
-        checked={diets[5]}
-        onChange={() => handleOnChange(5)}
-      />
+        <label htmlFor="ovoVegetarian">Ovo-Vegetarian</label>
+        <input
+          type="checkbox"
+          id="ovoVegetarian"
+          name="ovoVegetarian"
+          checked={diets[5]}
+          onChange={() => handleOnChange(5)}
+        />
+        <p>
+          All ingredients must be vegetarian and none of the ingredients can be
+          or contain dairy.
+        </p>
+        <label htmlFor="vegan">Vegan</label>
+        <input
+          type="checkbox"
+          id="vegan"
+          name="vegan"
+          checked={diets[6]}
+          onChange={() => handleOnChange(6)}
+        />
+      </>
       <p>
         No ingredients may contain meat or meat by-products, such as bones or
         gelatin, nor may they contain eggs, dairy, or honey.
-      </p>
-
-      <label htmlFor="pescetarian">Pescetarian</label>
-      <input
-        type="checkbox"
-        id="pescetarian"
-        name="pescetarian"
-        checked={diets[6]}
-        onChange={() => handleOnChange(6)}
-      />
-      <p>
-        Everything is allowed except meat and meat by-products - some
-        pescetarians eat eggs and dairy, some do not.{" "}
       </p>
 
       <label htmlFor="paleo">Paleo</label>

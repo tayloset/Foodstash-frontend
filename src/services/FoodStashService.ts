@@ -66,7 +66,6 @@ export const searchRecipes = (qsp: any): Promise<SearchResult> => {
         // ignorePantry: true,
         ...(qsp.searchTerm ? { query: qsp.searchTerm } : {}),
         ...(qsp.searchCuisine ? { cuisine: qsp.searchCuisine } : {}),
-        // ...(qsp.searchDiet ? { diet: qsp.searchDiet } : {}),
         ...(qsp.searchIntolerances
           ? { intolerances: qsp.searchIntolerances }
           : {}),
