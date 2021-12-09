@@ -64,17 +64,17 @@ const Search = () => {
         cuisineString += `,${cuisineNameArray[index]}`;
       }
     });
+    //
     if (profile) {
       searchRecipesV2({
         searchTerm,
         searchCuisine: cuisineString,
-        // searchDiet: profile!.diet,
         searchIntolerances: profile!.intolerances,
         searchPantry: profile!.pantry.toString(),
-        searchEquipment: profile!.equipment.join(`""`),
+        searchEquipment: `\"${profile!.equipment.join(`""`)}\"`,
       }).then((data) => {
         setRecipes(data);
-        console.log(recipes);
+        console.log(data);
       });
     } else {
       searchRecipesV2({ searchTerm, searchCuisine: cuisineString }).then(
