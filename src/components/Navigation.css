@@ -10,3 +10,12 @@
 .Navigation img {
   width: 50%;
 }
+
+/* .Navigation .notSignedIn {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.Navigation .notSignedIn {
+  opacity: 50%;
+}
