@@ -1,0 +1,54 @@
+.Search {
+  width: 100vw;
+}
+
+.Search .searchForm {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.Search .cuisineButton {
+  width: 100vw;
+}
+
+.Search .searchButton {
+  width: 100vw;
+}
+
+.Search label {
+  font-size: x-large;
+}
+
+.Search .inputLabelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 0px;
+}
+
+@media only screen and (min-width: 768px) {
+  .Search .searchForm {
+    width: 90vw;
+    margin-left: 10vw;
+    flex-direction: row;
+  }
+
+  .Search .cuisineBox {
+    position: fixed;
+    display: block;
+    width: 20vw;
+  }
+
+  .Search #searchTerm {
+    width: 40vw;
+  }
+
+  .Search .cuisineButton {
+    width: 25vw;
+  }
+
+  .Search .searchButton {
+    width: 25vw;
+  }
+}
