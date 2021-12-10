@@ -34,10 +34,14 @@ const RecipeItem = ({ recipe }: Props) => {
       <Link to={`/recipe/${encodeURIComponent(recipe.id!)}`}>
         <img src={recipe.image} alt={recipe.imageType} />{" "}
       </Link>
-      {profile!.favorites.includes(recipe.id!.toString()) ? (
-        <i className="fas fa-star" onClick={favoritesToggle}></i>
-      ) : (
-        <i className="far fa-star" onClick={favoritesToggle}></i>
+      {profile && (
+        <>
+          {profile!.favorites.includes(recipe.id!.toString()) ? (
+            <i className="fas fa-star" onClick={favoritesToggle}></i>
+          ) : (
+            <i className="far fa-star" onClick={favoritesToggle}></i>
+          )}
+        </>
       )}
     </div>
   );

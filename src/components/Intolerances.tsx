@@ -41,6 +41,7 @@ const Intolerances = () => {
     updatedProfile.intolerances = intolerancesString;
     delete updatedProfile._id;
     updateProfileHandler(updatedProfile);
+    alert("Your profile has been updated!");
   };
 
   return (

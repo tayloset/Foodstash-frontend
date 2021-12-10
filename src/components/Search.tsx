@@ -1,4 +1,4 @@
-import { FormEvent, useContext, useEffect, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import Recipe from "../models/Recipe";
 import { searchRecipesV2 } from "../services/FoodStashService";
@@ -64,7 +64,7 @@ const Search = () => {
         cuisineString += `,${cuisineNameArray[index]}`;
       }
     });
-    //
+
     if (profile) {
       searchRecipesV2({
         searchTerm,
@@ -85,14 +85,6 @@ const Search = () => {
       );
     }
   };
-
-  // useEffect(() => {
-  //   searchRecipes({ searchIntolerances: profile!?.intolerances }).then(
-  //     (data) => {
-  //       setRecipes(data.results);
-  //     }
-  //   );
-  // }, []);
 
   return (
     <div>
