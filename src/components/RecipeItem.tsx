@@ -28,22 +28,33 @@ const RecipeItem = ({ recipe }: Props) => {
   };
 
   return (
-    <div className="RecipeItem">
-      <p>{recipe.title}</p>
-
-      <Link to={`/recipe/${encodeURIComponent(recipe.id!)}`}>
-        <img src={recipe.image} alt={recipe.imageType} />{" "}
-      </Link>
-      {profile && (
-        <>
-          {profile!.favorites.includes(recipe.id!.toString()) ? (
-            <i className="fas fa-star" onClick={favoritesToggle}></i>
-          ) : (
-            <i className="far fa-star" onClick={favoritesToggle}></i>
-          )}
-        </>
-      )}
-    </div>
+    <tr className="RecipeItem">
+      <td className="imgTD">
+        <Link to={`/recipe/${encodeURIComponent(recipe.id!)}`}>
+          <img
+            src={recipe.image}
+            alt={recipe.imageType}
+            className="recipeImage"
+          />{" "}
+        </Link>
+      </td>
+      <td className="titleTD">
+        <Link to={`/recipe/${encodeURIComponent(recipe.id!)}`}>
+          <h2 className="recipeTitle">{recipe.title}</h2>
+        </Link>
+      </td>
+      <td className="starTD">
+        {profile && (
+          <>
+            {profile!.favorites.includes(recipe.id!.toString()) ? (
+              <i className="fas fa-star" onClick={favoritesToggle}></i>
+            ) : (
+              <i className="far fa-star" onClick={favoritesToggle}></i>
+            )}
+          </>
+        )}
+      </td>
+    </tr>
   );
 };
 

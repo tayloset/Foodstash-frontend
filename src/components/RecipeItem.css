@@ -1,2 +1,47 @@
+.RecipeItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+}
 
+.RecipeItem :link {
+  text-decoration: none;
+  color: #095d45;
+}
 
+.RecipeItem :visited {
+  color: #819c8e;
+}
+
+.RecipeItem imgTD:hover {
+  color: #0f956f;
+}
+
+.RecipeItem .imgTD {
+  width: 25vw;
+}
+
+.RecipeItem .titleTD {
+  width: 70vw;
+  padding: 0px 10px;
+}
+
+.RecipeItem .starTD {
+  width: 5vw;
+}
+
+.RecipeItem .fa-star {
+  color: #07881f;
+}
+
+.RecipeItem .recipeImage {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .RecipeItem {
+    width: 90vw;
+    margin-left: 10vw;
+  }
+}

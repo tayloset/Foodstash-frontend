@@ -1,5 +1,16 @@
+.Header {
+  width: 100vw;
+  font-family: "Road Rage", cursive;
+}
+
 .Header :link {
   text-decoration: none;
+  color: #063829;
+}
+
+.Header :visited {
+  text-decoration: none;
+  color: #063829;
 }
 
 .Header .logo {
@@ -20,4 +31,5 @@
 
 .Header h1 {
   display: absolute;
+  font-size: 50px;
 }
