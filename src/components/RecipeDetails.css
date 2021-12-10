@@ -1,0 +1,35 @@
+.Details img {
+  width: 90vw;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4%;
+}
+.Details h2 {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+.Details .typeCuisine {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.Details .dishType,
+.cuisines {
+  padding: 0;
+}
+
+.Details .extraInfo {
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+}
+.Details .instructions {
+  padding-left: 4%;
+}
+@media only screen and (min-width: 768px) {
+}
