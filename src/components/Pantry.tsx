@@ -33,9 +33,9 @@ const Pantry = () => {
           value={foodItem}
           onChange={(e) => setFoodItem(e.target.value)}
         />
-        <button>Add</button>
+        <button className="addFoodButton">Add</button>
       </form>
-      <ul>
+      <ul className="foodList">
         {profile?.pantry.map((item, index) => (
           <li key={`${item}${index}`}>
             {item}

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .Equipment {
   }
 
@@ -6,7 +6,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 20vw;
   }
 
   .equipmentForm {
@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
-    width: 3.5%;
+    width: 40px;
   }
 
   .EquipmentList {
