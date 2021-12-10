@@ -23,7 +23,7 @@ const Equipment = () => {
 
   return (
     <div className="Equipment">
-      <form onSubmit={submitHandler}>
+      <form className="equipmentForm" onSubmit={submitHandler}>
         <label htmlFor="equipmentItem">Add Equipment to your Kitchen!</label>
         <input
           type="text"
@@ -33,16 +33,18 @@ const Equipment = () => {
           value={equipmentItem}
           onChange={(e) => setEquipmentItem(e.target.value)}
         />
-        <button>Add</button>
+        <button className="equipmentAddButton">Add</button>
       </form>
-      <ul>
-        {profile?.equipment.map((item, index) => (
-          <li key={`${item}${index}`}>
-            {item}
-            <button onClick={() => deleteEquipmentHandler(index)}>X</button>
-          </li>
-        ))}
-      </ul>
+      <div className="EquipmentList">
+        <ul>
+          {profile?.equipment.map((item, index) => (
+            <li key={`${item}${index}`}>
+              {item}
+              <button onClick={() => deleteEquipmentHandler(index)}>X</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

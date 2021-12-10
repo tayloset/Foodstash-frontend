@@ -3,7 +3,8 @@
 }
 
 .Header .logo {
-  width: 6%;
+  width: 100px;
+  height: 100px;
 }
 
 .Header {
