@@ -2,8 +2,9 @@
   .Navigation {
     position: fixed;
     top: 120px;
-    left: 0;
+    left: 1vw;
     margin: 0;
+    width: 10vw;
   }
 
   .Navigation .navContainer {
