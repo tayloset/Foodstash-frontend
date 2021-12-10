@@ -2,8 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import AuthContext from "../context/AuthContext";
 import Details from "../models/Details";
-import { getRecipeDetails } from "../services/FoodStashService";
+import {
+  getRecipeDetails,
+  getRecipeInstructions,
+} from "../services/FoodStashService";
 import "./RecipeDetails.css";
+import RecipeInstructionsModel from "../models/RecipeInstructionsModel";
+import RecipePartInstructions from "./RecipePartInstructions";
 
 interface RouteParams {
   id: string;
@@ -30,11 +35,16 @@ const RecipeDetails = () => {
 
   const [recipeDetails, setRecipeDetails] = useState<Details>();
   let id = useParams<RouteParams>().id;
-  console.log(id);
+  const [recipeInstructions, setRecipeInstructions] =
+    useState<RecipeInstructionsModel[]>();
 
   useEffect(() => {
     getRecipeDetails(parseInt(id)).then((response) => {
       setRecipeDetails(response);
+    });
+    getRecipeInstructions(id).then((response) => {
+      console.log(response);
+      setRecipeInstructions(response);
     });
   }, [id]);
 
@@ -80,6 +90,17 @@ const RecipeDetails = () => {
         <p>User Score: {recipeDetails?.spoonacularScore}</p>
         <p>Servings: {recipeDetails?.servings}</p>
       </div>
+
+      <h2>Instructions</h2>
+      <ul className="instructions">
+        {recipeInstructions?.map((part, index) => (
+          <RecipePartInstructions
+            recipeName={recipeDetails!?.title}
+            part={part}
+            key={recipeInstructions[index].name}
+          />
+        ))}
+      </ul>
     </div>
   );
 };
