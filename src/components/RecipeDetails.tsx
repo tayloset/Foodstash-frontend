@@ -50,16 +50,20 @@ const RecipeDetails = () => {
 
   return (
     <div className="Details">
-      {profile && (
+      <h2>
+        {recipeDetails?.title}{" "}
         <>
-          {profile!.favorites.includes(recipeDetails!?.id!.toString()) ? (
-            <i className="fas fa-star" onClick={favoritesToggle}></i>
-          ) : (
-            <i className="far fa-star" onClick={favoritesToggle}></i>
+          {profile && (
+            <>
+              {profile!.favorites.includes(recipeDetails!?.id!.toString()) ? (
+                <i className="fas fa-star" onClick={favoritesToggle}></i>
+              ) : (
+                <i className="far fa-star" onClick={favoritesToggle}></i>
+              )}
+            </>
           )}
         </>
-      )}
-      <h2>{recipeDetails?.title}</h2>
+      </h2>
       <img src={recipeDetails?.image} alt={recipeDetails?.title} />
       <div className="typeCuisine">
         <ul className="dishType">
@@ -76,6 +80,12 @@ const RecipeDetails = () => {
         </ul>
       </div>
 
+      <div className="extraInfo">
+        <p>Ready in {recipeDetails?.readyInMinutes} minutes</p>
+        <p>User Score: {recipeDetails?.spoonacularScore}</p>
+        <p>Servings: {recipeDetails?.servings}</p>
+      </div>
+
       <div className="ingredients">
         <h2>Ingredients</h2>
         <ul>
@@ -83,12 +93,6 @@ const RecipeDetails = () => {
             <li key={`${item}${index}`}>{item.originalString}</li>
           ))}
         </ul>
-      </div>
-
-      <div className="extraInfo">
-        <p>Ready in {recipeDetails?.readyInMinutes} minutes</p>
-        <p>User Score: {recipeDetails?.spoonacularScore}</p>
-        <p>Servings: {recipeDetails?.servings}</p>
       </div>
 
       <h2>Instructions</h2>
