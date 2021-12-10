@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./Navigation.css";
 import Search from "../assets/Search.png";
 import Pantry from "../assets/Pantry.png";
-import Diet from "../assets/Diet.png";
 import Intolerances from "../assets/Intolerances.png";
 import Equipment from "../assets/Equipment.png";
 import Favorites from "../assets/Favorites.png";

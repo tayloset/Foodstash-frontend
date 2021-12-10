@@ -14,7 +14,7 @@ const Favorites = () => {
       setRecipes(data);
       console.log(recipes);
     });
-  }, []);
+  });
 
   return (
     <ul className="Favorites">

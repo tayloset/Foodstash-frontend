@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
+import AuthContext from "../context/AuthContext";
 import Details from "../models/Details";
 import { getRecipeDetails } from "../services/FoodStashService";
 import "./RecipeDetails.css";
@@ -9,6 +10,24 @@ interface RouteParams {
 }
 
 const RecipeDetails = () => {
+  const { profile, updateProfileHandler } = useContext(AuthContext);
+
+  const favoritesToggle = () => {
+    const updatedProfile: any = { ...profile };
+    const isId = (element: string): boolean =>
+      element === recipeDetails!?.id!.toString();
+    if (profile!.favorites.includes(recipeDetails!?.id!.toString())) {
+      updatedProfile.favorites.splice(
+        updatedProfile.favorites.findIndex(isId),
+        1
+      );
+    } else {
+      updatedProfile.favorites.push(recipeDetails!?.id!.toString());
+    }
+    delete updatedProfile._id;
+    updateProfileHandler(updatedProfile);
+  };
+
   const [recipeDetails, setRecipeDetails] = useState<Details>();
   let id = useParams<RouteParams>().id;
   console.log(id);
@@ -21,6 +40,15 @@ const RecipeDetails = () => {
 
   return (
     <div className="Details">
+      {profile && (
+        <>
+          {profile!.favorites.includes(recipeDetails!?.id!.toString()) ? (
+            <i className="fas fa-star" onClick={favoritesToggle}></i>
+          ) : (
+            <i className="far fa-star" onClick={favoritesToggle}></i>
+          )}
+        </>
+      )}
       <h2>{recipeDetails?.title}</h2>
       <img src={recipeDetails?.image} alt={recipeDetails?.title} />
       <div className="typeCuisine">

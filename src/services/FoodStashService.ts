@@ -22,25 +22,6 @@ export const addProfile = (uid: string): Promise<Profile> => {
     .then((response) => response.data);
 };
 
-export const updateProfile = (
-  uid: string,
-  category: string,
-  updateData: any
-): Promise<Profile> => {
-  return axios
-    .put(
-      `${baseURL}/profiles/${encodeURIComponent(uid)}/${encodeURIComponent(
-        category
-      )}`,
-      { updateData }
-    )
-    .then((response) => {
-      console.log(response.data);
-      console.log(updateData);
-      return response.data;
-    });
-};
-
 export const getRecipeDetails = (recipeId: any): Promise<Details> => {
   return axios
     .get(`${spoonacularBaseURL}/${encodeURIComponent(recipeId)}/information`, {
@@ -92,7 +73,7 @@ export const searchByIds = (ids: string): Promise<Recipe[]> => {
     });
 };
 
-export const searchbyIngredients = (qsp: any): Promise<Recipe[]> => {
+export const searchByIngredients = (qsp: any): Promise<Recipe[]> => {
   return axios
     .get(`${spoonacularBaseURL}/findByIngredients`, {
       params: {
@@ -116,7 +97,7 @@ export const searchRecipesV2 = (qsp: any): Promise<Recipe[]> => {
     data.results.forEach((recipe) => {
       queryCuisineIDs.push(recipe?.id!);
     });
-    searchbyIngredients(qsp).then((data) => {
+    searchByIngredients(qsp).then((data) => {
       data.forEach((recipe) => {
         ingredientsIDs.push(recipe?.id!);
       });

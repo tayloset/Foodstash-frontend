@@ -3,7 +3,7 @@ interface Ingredients {
 }
 
 export default interface Details {
-  _id?: string;
+  id?: number;
   title: string;
   image: string;
   dishTypes: string[];
