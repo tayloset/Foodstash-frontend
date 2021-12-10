@@ -1,5 +1,6 @@
 import axios from "axios";
 import Details from "../models/Details";
+import RecipeInstructionsModel from "../models/RecipeInstructionsModel";
 import Profile from "../models/Profile";
 import Recipe from "../models/Recipe";
 import SearchResult from "../models/SearchResult";
@@ -22,7 +23,7 @@ export const addProfile = (uid: string): Promise<Profile> => {
     .then((response) => response.data);
 };
 
-export const getRecipeDetails = (recipeId: any): Promise<Details> => {
+export const getRecipeDetails = (recipeId: number): Promise<Details> => {
   return axios
     .get(`${spoonacularBaseURL}/${encodeURIComponent(recipeId)}/information`, {
       params: {
@@ -31,6 +32,26 @@ export const getRecipeDetails = (recipeId: any): Promise<Details> => {
         includeNutrition: false,
       },
     })
+    .then((response) => {
+      console.log(response);
+      return response.data;
+    });
+};
+
+export const getRecipeInstructions = (
+  recipeId: string
+): Promise<RecipeInstructionsModel[]> => {
+  return axios
+    .get(
+      `${spoonacularBaseURL}/${encodeURIComponent(
+        recipeId
+      )}/analyzedInstructions`,
+      {
+        params: {
+          apiKey: spoonacularApiKey,
+        },
+      }
+    )
     .then((response) => {
       console.log(response);
       return response.data;
