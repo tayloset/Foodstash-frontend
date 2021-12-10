@@ -1,21 +1,33 @@
-.Navigation {
-  display: flex;
-  justify-content: space-between;
-}
+@media only screen and (max-width: 768px) {
+  .Navigation {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    margin: 0;
+  }
 
-.Navigation :link {
-  text-decoration: none;
-}
+  .Navigation .navContainer {
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+  }
 
-.Navigation img {
-  width: 50%;
-}
+  .Navigation :link {
+    text-decoration: none;
+    width: 150px;
+  }
 
-/* .Navigation .notSignedIn {
+  .Navigation img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* .Navigation .notSignedIn {
   display: flex;
   justify-content: space-between;
 } */
 
-.Navigation .notSignedIn {
-  opacity: 50%;
+  .Navigation .notSignedIn {
+    opacity: 50%;
+  }
 }

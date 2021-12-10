@@ -13,60 +13,62 @@ const Navigation = () => {
 
   return (
     <div className="Navigation">
-      <Link to="/">
-        <img src={Search} alt="Search" />
-        <p>Search</p>
-      </Link>
-      {user ? (
-        <>
-          <Link to="/pantry">
-            <img src={Pantry} alt="Pantry" />
-            <p>Pantry</p>
-          </Link>
-          {/* <Link to="/diet">
+      <div className="navContainer">
+        <Link to="/">
+          <img src={Search} alt="Search" />
+          <p>Search</p>
+        </Link>
+        {user ? (
+          <>
+            <Link to="/pantry">
+              <img src={Pantry} alt="Pantry" />
+              <p>Pantry</p>
+            </Link>
+            {/* <Link to="/diet">
             <img src={Diet} alt="Diet" />
             <p>Diet</p>
           </Link> */}
-          <Link to="/intolerances">
-            <img src={Intolerances} alt="Intolerances" />
-            <p>Intolerances</p>
-          </Link>
-          <Link to="/equipment">
-            <img src={Equipment} alt="Equipment" />
-            <p>Equipment</p>
-          </Link>
-          <Link to="/favorites">
-            <img src={Favorites} alt="Favorites" />
-            <p>Favorites</p>
-          </Link>
-        </>
-      ) : (
-        <>
-          <h3>Sign-in to use these options!</h3>
-          <div>
-            <img className="notSignedIn" src={Pantry} alt="Pantry" />
-            <p>Pantry</p>
-          </div>
-          {/* <img src={Diet} alt="Diet" />
+            <Link to="/intolerances">
+              <img src={Intolerances} alt="Intolerances" />
+              <p>Intolerances</p>
+            </Link>
+            <Link to="/equipment">
+              <img src={Equipment} alt="Equipment" />
+              <p>Equipment</p>
+            </Link>
+            <Link to="/favorites">
+              <img src={Favorites} alt="Favorites" />
+              <p>Favorites</p>
+            </Link>
+          </>
+        ) : (
+          <>
+            <h3>Sign-in to use these options!</h3>
+            <div>
+              <img className="notSignedIn" src={Pantry} alt="Pantry" />
+              <p>Pantry</p>
+            </div>
+            {/* <img src={Diet} alt="Diet" />
           <p>Diet</p> */}
-          <div>
-            <img
-              className="notSignedIn"
-              src={Intolerances}
-              alt="Intolerances"
-            />
-            <p>Intolerances</p>
-          </div>
-          <div>
-            <img className="notSignedIn" src={Equipment} alt="Equipment" />
-            <p>Equipment</p>
-          </div>
-          <div>
-            <img className="notSignedIn" src={Favorites} alt="Favorites" />
-            <p>Favorites</p>
-          </div>
-        </>
-      )}
+            <div>
+              <img
+                className="notSignedIn"
+                src={Intolerances}
+                alt="Intolerances"
+              />
+              <p>Intolerances</p>
+            </div>
+            <div>
+              <img className="notSignedIn" src={Equipment} alt="Equipment" />
+              <p>Equipment</p>
+            </div>
+            <div>
+              <img className="notSignedIn" src={Favorites} alt="Favorites" />
+              <p>Favorites</p>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 };
