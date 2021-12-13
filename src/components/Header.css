@@ -1,5 +1,5 @@
 .Header {
-  width: 100vw;
+  width: 100%;
   font-family: "Road Rage", cursive;
 }
 
@@ -25,9 +25,9 @@
   justify-content: space-between;
 }
 
-.Header button {
+/* .Header button {
   margin-right: 5px;
-}
+} */
 
 .Header h1 {
   display: absolute;
