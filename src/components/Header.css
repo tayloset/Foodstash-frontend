@@ -33,3 +33,7 @@
   display: absolute;
   font-size: 50px;
 }
+
+.Header button {
+  margin-right: 5px;
+}

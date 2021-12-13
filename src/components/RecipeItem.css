@@ -19,16 +19,16 @@
 }
 
 .RecipeItem .imgTD {
-  width: 25vw;
+  width: 25%;
 }
 
 .RecipeItem .titleTD {
-  width: 70vw;
+  width: 70%;
   padding: 0px 10px;
 }
 
 .RecipeItem .starTD {
-  width: 5vw;
+  width: 5%;
 }
 
 .RecipeItem .fa-star {
@@ -41,7 +41,7 @@
 
 @media only screen and (min-width: 768px) {
   .RecipeItem {
-    width: 90vw;
+    width: 90%;
     margin-left: 10vw;
   }
 }

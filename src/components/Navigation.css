@@ -1,7 +1,9 @@
 .Navigation .navContainer {
   display: flex;
-  padding-top: 10px;
-  padding-left: 10px;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .Navigation img {
   height: 9vh;
@@ -9,25 +11,34 @@
   padding-right: 5px;
 }
 
+.Navigation :link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 @media only screen and (min-width: 768px) {
   .Navigation {
     position: fixed;
-    top: 120px;
-    left: 1vw;
+    top: 128px;
     margin: 0;
-    width: 10vw;
   }
 
   .Navigation .navContainer {
     display: flex;
-    width: 150px;
     flex-direction: column;
     padding-left: 0;
+    bottom: auto;
+    width: 10%;
+    height: calc(100% - 128px);
   }
 
   .Navigation :link {
     text-decoration: none;
-    width: 150px;
+    padding: 0;
   }
 
   /* .Navigation .notSignedIn {
