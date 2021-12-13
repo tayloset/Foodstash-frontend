@@ -1,1 +1,66 @@
+.Intolerances {
+  margin: 20px;
+  width: 100%;
+}
 
+.Intolerances .intolerancesContainer {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10vw;
+}
+
+.Intolerances .intolerances1,
+.intolerances2 {
+  flex: 1;
+}
+
+.Intolerances .intolerances1 {
+  display: block;
+}
+
+.Intolerances input {
+  height: 17px;
+  width: 17px;
+}
+
+.Intolerances label {
+  font-size: 20px;
+}
+
+.Intolerances button {
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  /* Desktop view */
+
+  .Intolerances {
+    margin: 0;
+  }
+  .Intolerances .intolerancesContainer,
+  .intolerances1,
+  .intolerances2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .Intolerances input {
+    position: relative;
+    right: 35px;
+    top: 33px;
+  }
+
+  .Intolerances label {
+    margin: 0;
+    font-size: 30px;
+  }
+
+  .Intolerances input {
+    height: 23px;
+    width: 23px;
+  }
+  .Intolerances button {
+    font-size: 20px;
+  }
+}
