@@ -32,6 +32,10 @@
   padding-left: 4%;
 }
 
+.Details .fa-star {
+  color: #07881f;
+}
+
 @media only screen and (min-width: 768px) {
   .Details {
     width: 90%;

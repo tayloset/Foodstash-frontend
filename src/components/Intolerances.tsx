@@ -66,7 +66,6 @@ const Intolerances = () => {
           />
           <label htmlFor="egg">Egg</label>
           <br />
-
           <input
             type="checkbox"
             name="gluten"
@@ -76,7 +75,6 @@ const Intolerances = () => {
           />
           <label htmlFor="gluten">Gluten</label>
           <br />
-
           <input
             type="checkbox"
             name="grain"
@@ -86,7 +84,6 @@ const Intolerances = () => {
           />
           <label htmlFor="grain">Grain</label>
           <br />
-
           <input
             type="checkbox"
             name="peanut"
@@ -96,7 +93,6 @@ const Intolerances = () => {
           />
           <label htmlFor="peanut">Peanut</label>
           <br />
-
           <input
             type="checkbox"
             name="seafood"
@@ -106,7 +102,6 @@ const Intolerances = () => {
           />
           <label htmlFor="seafood">Seafood</label>
         </div>
-
         <div className="intolerances2">
           <input
             type="checkbox"
@@ -117,7 +112,6 @@ const Intolerances = () => {
           />
           <label htmlFor="sesame">Sesame</label>
           <br />
-
           <input
             type="checkbox"
             name="shellfish"
@@ -127,7 +121,6 @@ const Intolerances = () => {
           />
           <label htmlFor="shellfish">Shellfish</label>
           <br />
-
           <input
             type="checkbox"
             name="soy"
@@ -137,7 +130,6 @@ const Intolerances = () => {
           />
           <label htmlFor="soy">Soy</label>
           <br />
-
           <input
             type="checkbox"
             name="sulfite"
@@ -147,7 +139,6 @@ const Intolerances = () => {
           />
           <label htmlFor="sulfite">Sulfite</label>
           <br />
-
           <input
             type="checkbox"
             name="treeNut"
@@ -157,7 +148,6 @@ const Intolerances = () => {
           />
           <label htmlFor="treeNut">Tree Nut</label>
           <br />
-
           <input
             type="checkbox"
             name="wheat"
