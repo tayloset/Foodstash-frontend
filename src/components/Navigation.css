@@ -1,3 +1,14 @@
+.Navigation .navContainer {
+  display: flex;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.Navigation img {
+  height: 9vh;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 @media only screen and (min-width: 768px) {
   .Navigation {
     position: fixed;
@@ -11,16 +22,12 @@
     display: flex;
     width: 150px;
     flex-direction: column;
+    padding-left: 0;
   }
 
   .Navigation :link {
     text-decoration: none;
     width: 150px;
-  }
-
-  .Navigation img {
-    width: 100px;
-    height: 100px;
   }
 
   /* .Navigation .notSignedIn {

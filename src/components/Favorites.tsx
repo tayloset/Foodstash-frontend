@@ -14,14 +14,16 @@ const Favorites = () => {
       setRecipes(data);
       console.log(recipes);
     });
-  });
+  }, []);
 
   return (
-    <ul className="Favorites">
-      {recipes.map((recipe) => (
-        <RecipeItem recipe={recipe} key={recipe?.id!} />
-      ))}
-    </ul>
+    <table className="Favorites">
+      <tbody>
+        {recipes.map((recipe) => (
+          <RecipeItem recipe={recipe} key={recipe?.id!} />
+        ))}
+      </tbody>
+    </table>
   );
 };
 
