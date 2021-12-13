@@ -65,6 +65,11 @@ const RecipeDetails = () => {
         </>
       </h2>
       <img src={recipeDetails?.image} alt={recipeDetails?.title} />
+      <div className="extraInfo">
+        <p>Ready in {recipeDetails?.readyInMinutes} minutes</p>
+        <p>User Score: {recipeDetails?.spoonacularScore}</p>
+        <p>Servings: {recipeDetails?.servings}</p>
+      </div>
       <div className="typeCuisine">
         <ul className="dishType">
           <h3>Dish Type</h3>
@@ -80,31 +85,27 @@ const RecipeDetails = () => {
         </ul>
       </div>
 
-      <div className="extraInfo">
-        <p>Ready in {recipeDetails?.readyInMinutes} minutes</p>
-        <p>User Score: {recipeDetails?.spoonacularScore}</p>
-        <p>Servings: {recipeDetails?.servings}</p>
-      </div>
+      <div className="detailsContainer">
+        <div className="ingredients">
+          <h2>Ingredients</h2>
+          <ul>
+            {recipeDetails?.extendedIngredients.map((item, index) => (
+              <li key={`${item}${index}`}>{item.originalString}</li>
+            ))}
+          </ul>
+        </div>
 
-      <div className="ingredients">
-        <h2>Ingredients</h2>
-        <ul>
-          {recipeDetails?.extendedIngredients.map((item, index) => (
-            <li key={`${item}${index}`}>{item.originalString}</li>
+        <ul className="instructions">
+          <h2>Instructions</h2>
+          {recipeInstructions?.map((part, index) => (
+            <RecipePartInstructions
+              recipeName={recipeDetails!?.title}
+              part={part}
+              key={recipeInstructions[index].name}
+            />
           ))}
         </ul>
       </div>
-
-      <h2>Instructions</h2>
-      <ul className="instructions">
-        {recipeInstructions?.map((part, index) => (
-          <RecipePartInstructions
-            recipeName={recipeDetails!?.title}
-            part={part}
-            key={recipeInstructions[index].name}
-          />
-        ))}
-      </ul>
     </div>
   );
 };

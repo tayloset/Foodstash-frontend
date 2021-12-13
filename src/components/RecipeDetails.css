@@ -32,4 +32,40 @@
   padding-left: 4%;
 }
 @media only screen and (min-width: 768px) {
+  .Details {
+    width: 90vw;
+    margin-left: 10vw;
+  }
+
+  .Details img {
+    width: 40vw;
+  }
+
+  .Details .typeCuisine {
+    width: 40vw;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .Details .extraInfo {
+    width: 35vw;
+    float: right;
+    margin-right: 5vw;
+  }
+
+  .Details .detailsContainer {
+    display: flex;
+  }
+
+  .Details .ingredients,
+  .instructions {
+    flex: 1;
+  }
+
+  .Details .instructions {
+    padding: 0;
+  }
 }
