@@ -14,32 +14,38 @@ const Navigation = () => {
   return (
     <div className="Navigation">
       <div className="navContainer">
-        <Link to="/">
-          <img src={Search} alt="Search" />
-          <p>Search</p>
-        </Link>
+        <div className="navLinks">
+          <Link to="/">
+            <img src={Search} alt="Search" />
+            <p>Search</p>
+          </Link>
+        </div>
         {user ? (
           <>
-            <Link to="/pantry">
-              <img src={Pantry} alt="Pantry" />
-              <p>Pantry</p>
-            </Link>
-            {/* <Link to="/diet">
-            <img src={Diet} alt="Diet" />
-            <p>Diet</p>
-          </Link> */}
-            <Link to="/intolerances">
-              <img src={Intolerances} alt="Intolerances" />
-              <p>Intolerances</p>
-            </Link>
-            <Link to="/equipment">
-              <img src={Equipment} alt="Equipment" />
-              <p>Equipment</p>
-            </Link>
-            <Link to="/favorites">
-              <img src={Favorites} alt="Favorites" />
-              <p>Favorites</p>
-            </Link>
+            <div className="navLinks">
+              <Link to="/pantry">
+                <img src={Pantry} alt="Pantry" />
+                <p>Pantry</p>
+              </Link>
+            </div>
+            <div className="navLinks">
+              <Link to="/intolerances">
+                <img src={Intolerances} alt="Intolerances" />
+                <p>Intolerances</p>
+              </Link>
+            </div>
+            <div className="navLinks">
+              <Link to="/equipment">
+                <img src={Equipment} alt="Equipment" />
+                <p>Equipment</p>
+              </Link>
+            </div>
+            <div className="navLinks">
+              <Link to="/favorites">
+                <img src={Favorites} alt="Favorites" />
+                <p>Favorites</p>
+              </Link>
+            </div>
           </>
         ) : (
           <>
