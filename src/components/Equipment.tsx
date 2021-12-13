@@ -24,12 +24,11 @@ const Equipment = () => {
   return (
     <div className="Equipment">
       <form className="equipmentForm" onSubmit={submitHandler}>
-        <label htmlFor="equipmentItem">Add Equipment to your Kitchen!</label>
         <input
           type="text"
           name="equipmentItem"
           id="equipmentItem"
-          placeholder="Add Equipment"
+          placeholder="Add Equipment to your Kitchen!"
           value={equipmentItem}
           onChange={(e) => setEquipmentItem(e.target.value)}
         />
@@ -39,8 +38,12 @@ const Equipment = () => {
         <ul>
           {profile?.equipment.map((item, index) => (
             <li key={`${item}${index}`}>
-              {item}
-              <button onClick={() => deleteEquipmentHandler(index)}>X</button>
+              <button
+                onClick={() => deleteEquipmentHandler(index)}
+                className="equipmentButton"
+              >
+                {item} X
+              </button>
             </li>
           ))}
         </ul>

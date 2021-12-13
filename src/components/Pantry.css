@@ -1,36 +1,47 @@
+.Pantry {
+  width: 100%;
+}
+
+.Pantry .pantryForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.Pantry .addFoodButton {
+  width: 100%;
+}
+
+.Pantry ul {
+  overflow: hidden;
+  list-style-type: none;
+}
+
+.Pantry li {
+  float: left;
+  display: block;
+}
+
+.Pantry .foodButton {
+  padding: 2px;
+  margin: 2px;
+  font-size: x-large;
+}
+
 @media only screen and (min-width: 768px) {
   .Pantry {
+    width: 90%;
+    margin-left: 10%;
+  }
+  .Pantry .pantryForm {
+    flex-direction: row;
+    display: flex;
   }
 
-  label {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+  .Pantry #foodItem {
+    width: 125%;
   }
 
-  form {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-
-  .addFoodButton {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    width: 40px;
-  }
-
-  .foodList {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 20%;
-    height: 0;
+  .Pantry .addFoodButton {
+    width: 75%;
   }
 }
