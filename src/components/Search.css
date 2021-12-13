@@ -28,27 +28,38 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .Search {
+    width: 100%;
+  }
   .Search .searchForm {
-    width: 90vw;
-    margin-left: 10vw;
+    width: 90%;
+    margin-left: 10%;
     flex-direction: row;
   }
 
   .Search .cuisineBox {
     position: fixed;
+    top: 145px;
+    left: 55%;
     display: block;
-    width: 20vw;
+    width: 22.5%;
+    overflow-y: auto;
+    height: calc(100% - 145px);
   }
 
   .Search #searchTerm {
-    width: 40vw;
+    width: 50%;
   }
 
   .Search .cuisineButton {
-    width: 25vw;
+    width: 25%;
   }
 
   .Search .searchButton {
-    width: 25vw;
+    width: 25%;
+  }
+
+  .Search label {
+    font-size: large;
   }
 }

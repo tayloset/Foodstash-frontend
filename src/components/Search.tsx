@@ -109,7 +109,6 @@ const Search = () => {
         ) : (
           <div className="cuisineBox">
             <div className="inputLabelContainer">
-              <label htmlFor="african">African</label>
               <input
                 type="checkbox"
                 name="african"
@@ -117,9 +116,9 @@ const Search = () => {
                 checked={cuisineArray[0]}
                 onChange={() => handleOnChange(0)}
               />
+              <label htmlFor="african">African</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="american">American</label>
               <input
                 type="checkbox"
                 name="american"
@@ -127,9 +126,9 @@ const Search = () => {
                 checked={cuisineArray[1]}
                 onChange={() => handleOnChange(1)}
               />
+              <label htmlFor="american">American</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="british">British</label>
               <input
                 type="checkbox"
                 name="british"
@@ -137,9 +136,9 @@ const Search = () => {
                 checked={cuisineArray[2]}
                 onChange={() => handleOnChange(2)}
               />
+              <label htmlFor="british">British</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="cajun">Cajun</label>
               <input
                 type="checkbox"
                 name="cajun"
@@ -147,9 +146,9 @@ const Search = () => {
                 checked={cuisineArray[3]}
                 onChange={() => handleOnChange(3)}
               />
+              <label htmlFor="cajun">Cajun</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="caribbean">Caribbean</label>
               <input
                 type="checkbox"
                 name="caribbean"
@@ -157,9 +156,9 @@ const Search = () => {
                 checked={cuisineArray[4]}
                 onChange={() => handleOnChange(4)}
               />
+              <label htmlFor="caribbean">Caribbean</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="chinese">Chinese</label>
               <input
                 type="checkbox"
                 name="chinese"
@@ -167,9 +166,9 @@ const Search = () => {
                 checked={cuisineArray[5]}
                 onChange={() => handleOnChange(5)}
               />
+              <label htmlFor="chinese">Chinese</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="easternEuropean">Eastern European</label>
               <input
                 type="checkbox"
                 name="easternEuropean"
@@ -177,9 +176,9 @@ const Search = () => {
                 checked={cuisineArray[6]}
                 onChange={() => handleOnChange(6)}
               />
+              <label htmlFor="easternEuropean">Eastern European</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="european">European</label>
               <input
                 type="checkbox"
                 name="european"
@@ -187,9 +186,9 @@ const Search = () => {
                 checked={cuisineArray[7]}
                 onChange={() => handleOnChange(7)}
               />
+              <label htmlFor="european">European</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="french">French</label>
               <input
                 type="checkbox"
                 name="french"
@@ -197,9 +196,9 @@ const Search = () => {
                 checked={cuisineArray[8]}
                 onChange={() => handleOnChange(8)}
               />
+              <label htmlFor="french">French</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="german">German</label>
               <input
                 type="checkbox"
                 name="german"
@@ -207,9 +206,9 @@ const Search = () => {
                 checked={cuisineArray[9]}
                 onChange={() => handleOnChange(9)}
               />
+              <label htmlFor="german">German</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="greek">Greek</label>
               <input
                 type="checkbox"
                 name="greek"
@@ -217,9 +216,9 @@ const Search = () => {
                 checked={cuisineArray[10]}
                 onChange={() => handleOnChange(10)}
               />
+              <label htmlFor="greek">Greek</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="indian">Indian</label>
               <input
                 type="checkbox"
                 name="indian"
@@ -227,9 +226,9 @@ const Search = () => {
                 checked={cuisineArray[11]}
                 onChange={() => handleOnChange(11)}
               />
+              <label htmlFor="indian">Indian</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="irish">Irish</label>
               <input
                 type="checkbox"
                 name="irish"
@@ -237,9 +236,9 @@ const Search = () => {
                 checked={cuisineArray[12]}
                 onChange={() => handleOnChange(12)}
               />
+              <label htmlFor="irish">Irish</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="italian">Italian</label>
               <input
                 type="checkbox"
                 name="italian"
@@ -247,9 +246,9 @@ const Search = () => {
                 checked={cuisineArray[13]}
                 onChange={() => handleOnChange(13)}
               />
+              <label htmlFor="italian">Italian</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="japanese">Japanese</label>
               <input
                 type="checkbox"
                 name="japanese"
@@ -257,9 +256,9 @@ const Search = () => {
                 checked={cuisineArray[14]}
                 onChange={() => handleOnChange(14)}
               />
+              <label htmlFor="japanese">Japanese</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="jewish">Jewish</label>
               <input
                 type="checkbox"
                 name="jewish"
@@ -267,9 +266,9 @@ const Search = () => {
                 checked={cuisineArray[15]}
                 onChange={() => handleOnChange(15)}
               />
+              <label htmlFor="jewish">Jewish</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="korean">Korean</label>
               <input
                 type="checkbox"
                 name="korean"
@@ -277,9 +276,9 @@ const Search = () => {
                 checked={cuisineArray[16]}
                 onChange={() => handleOnChange(16)}
               />
+              <label htmlFor="korean">Korean</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="latinAmerican">Latin American</label>
               <input
                 type="checkbox"
                 name="latinAmerican"
@@ -287,9 +286,9 @@ const Search = () => {
                 checked={cuisineArray[17]}
                 onChange={() => handleOnChange(17)}
               />
+              <label htmlFor="latinAmerican">Latin American</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="mediterranean">Mediterranean</label>
               <input
                 type="checkbox"
                 name="mediterranean"
@@ -297,9 +296,9 @@ const Search = () => {
                 checked={cuisineArray[18]}
                 onChange={() => handleOnChange(18)}
               />
+              <label htmlFor="mediterranean">Mediterranean</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="mexican">Mexican</label>
               <input
                 type="checkbox"
                 name="mexican"
@@ -307,9 +306,9 @@ const Search = () => {
                 checked={cuisineArray[19]}
                 onChange={() => handleOnChange(19)}
               />
+              <label htmlFor="mexican">Mexican</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="middleEastern">Middle Eastern</label>
               <input
                 type="checkbox"
                 name="middleEastern"
@@ -317,9 +316,9 @@ const Search = () => {
                 checked={cuisineArray[20]}
                 onChange={() => handleOnChange(20)}
               />
+              <label htmlFor="middleEastern">Middle Eastern</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="nordic">Nordic</label>
               <input
                 type="checkbox"
                 name="nordic"
@@ -327,9 +326,9 @@ const Search = () => {
                 checked={cuisineArray[21]}
                 onChange={() => handleOnChange(21)}
               />
+              <label htmlFor="nordic">Nordic</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="southern">Southern</label>
               <input
                 type="checkbox"
                 name="southern"
@@ -337,9 +336,9 @@ const Search = () => {
                 checked={cuisineArray[22]}
                 onChange={() => handleOnChange(22)}
               />
+              <label htmlFor="southern">Southern</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="spanish">Spanish</label>
               <input
                 type="checkbox"
                 name="spanish"
@@ -347,9 +346,9 @@ const Search = () => {
                 checked={cuisineArray[23]}
                 onChange={() => handleOnChange(23)}
               />
+              <label htmlFor="spanish">Spanish</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="thai">Thai</label>
               <input
                 type="checkbox"
                 name="thai"
@@ -357,9 +356,9 @@ const Search = () => {
                 checked={cuisineArray[24]}
                 onChange={() => handleOnChange(24)}
               />
+              <label htmlFor="thai">Thai</label>
             </div>
             <div className="inputLabelContainer">
-              <label htmlFor="vietnamese">Vietnamese</label>
               <input
                 type="checkbox"
                 name="vietnamese"
@@ -367,6 +366,7 @@ const Search = () => {
                 checked={cuisineArray[25]}
                 onChange={() => handleOnChange(25)}
               />
+              <label htmlFor="vietnamese">Vietnamese</label>
             </div>
           </div>
         )}
