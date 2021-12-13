@@ -1,19 +1,19 @@
 .Search {
-  width: 100vw;
+  width: 100%;
 }
 
 .Search .searchForm {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .Search .cuisineButton {
-  width: 100vw;
+  width: 100%;
 }
 
 .Search .searchButton {
-  width: 100vw;
+  width: 100%;
 }
 
 .Search label {
@@ -28,9 +28,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .Search {
-    width: 100%;
-  }
   .Search .searchForm {
     width: 90%;
     margin-left: 10%;
