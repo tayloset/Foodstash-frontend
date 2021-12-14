@@ -34,7 +34,7 @@
 .Search .searchButton:hover,
 .cuisineButton:hover,
 #searchTerm:hover {
-  opacity: 85%;
+  opacity: 0.85;
 }
 
 .Search #searchTerm::placeholder {

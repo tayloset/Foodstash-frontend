@@ -28,7 +28,7 @@
 
 .Equipment .equipmentAddButton:hover,
 #equipmentItem:hover {
-  opacity: 85%;
+  opacity: 0.85;
 }
 
 .Equipment #equipmentItem {
