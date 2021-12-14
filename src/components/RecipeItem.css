@@ -14,8 +14,10 @@
   color: #819c8e;
 }
 
-.RecipeItem imgTD:hover {
-  color: #0f956f;
+.RecipeItem .imgTD:hover,
+.titleTD:hover,
+.starTD:hover {
+  opacity: 0.75;
 }
 
 .RecipeItem .imgTD {

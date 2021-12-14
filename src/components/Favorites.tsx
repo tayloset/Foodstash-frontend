@@ -13,7 +13,7 @@ const Favorites = () => {
     searchByIds(profile!.favorites.toString()).then((data) => {
       setRecipes(data);
     });
-  }, []);
+  }, [profile]);
 
   return (
     <table className="Favorites">

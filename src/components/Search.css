@@ -6,11 +6,11 @@
 .Search .recipeBox {
   width: 100%;
   position: fixed;
-  top: 30%;
+  top: 248px;
   left: 0;
   display: block;
   overflow-y: auto;
-  height: calc(100% - 330px);
+  height: calc(100% - (273px + 9vh));
 }
 
 .Search .searchForm {
@@ -84,16 +84,17 @@
     height: calc(100% - 172px);
     background-color: white;
     border: 1px solid black;
+    z-index: 2;
   }
 
   .Search .recipeBox {
     width: 100%;
     position: fixed;
-    top: 23%;
+    top: 180px;
     left: 0;
     display: block;
     overflow-y: auto;
-    height: calc(100% - 123px);
+    height: calc(100% - 180px);
   }
 
   .Search #searchTerm {
@@ -101,6 +102,21 @@
     padding: 15px;
     border-bottom: 2px solid black;
     border-right: 1px solid black;
+  }
+
+  .Search input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: black;
+    transition: background-color 5000s ease-in-out 0s;
+    background-color: #819c8e;
+    font-family: "Acme", sans-serif;
   }
 
   .Search .cuisineButton {
