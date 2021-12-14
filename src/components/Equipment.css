@@ -38,10 +38,15 @@
   }
 
   .Equipment #equipmentItem {
-    width: 125%;
+    width: 80%;
+    padding: 15px;
+    border-radius: 0;
+    border: 2px solid black;
   }
 
   .Equipment .equipmentAddButton {
-    width: 75%;
+    width: 20%;
+    border-radius: 0;
+    border: 2px solid black;
   }
 }

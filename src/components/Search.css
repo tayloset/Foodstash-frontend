@@ -8,12 +8,39 @@
   flex-direction: column;
 }
 
+.Search .searchButton,
+.cuisineButton,
+#searchTerm {
+  border-radius: 0;
+  border: 2px solid black;
+  background-color: #819c8e;
+  color: black;
+  padding: 8px;
+}
+
+.Search .searchButton:hover,
+.cuisineButton:hover,
+#searchTerm:hover {
+  opacity: 85%;
+}
+
+.Search #searchTerm::placeholder {
+  color: black;
+}
+
+.Search #searchTerm {
+  border-bottom: 1px solid black;
+}
+
 .Search .cuisineButton {
   width: 100%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .Search .searchButton {
   width: 100%;
+  border-top: 1px solid black;
 }
 
 .Search label {
@@ -35,25 +62,36 @@
   }
 
   .Search .cuisineBox {
-    position: fixed;
-    top: 145px;
-    left: 55%;
+    position: absolute;
+    top: 172px;
+    left: 55.5%;
     display: block;
     width: 22.5%;
     overflow-y: auto;
-    height: calc(100% - 145px);
+    height: calc(100% - 172px);
+    background-color: white;
+    border: 1px solid black;
   }
 
   .Search #searchTerm {
     width: 50%;
+    padding: 15px;
+    border-bottom: 2px solid black;
+    border-right: 1px solid black;
   }
 
   .Search .cuisineButton {
     width: 25%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
   }
 
   .Search .searchButton {
     width: 25%;
+    border-left: 1px solid black;
+    border-top: 2px solid black;
   }
 
   .Search label {
