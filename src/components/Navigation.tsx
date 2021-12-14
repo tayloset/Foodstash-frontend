@@ -5,16 +5,21 @@ import Pantry from "../assets/Pantry.png";
 import Intolerances from "../assets/Intolerances.png";
 import Equipment from "../assets/Equipment.png";
 import Favorites from "../assets/Favorites.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
-//comment
+
 const Navigation = () => {
   const { user } = useContext(AuthContext);
+  const [path, setPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    setPath(window.location.pathname);
+  }, []);
 
   return (
     <div className="Navigation">
       <div className="navContainer">
-        <div className="navLinks">
+        <div className={`navLinks${path === "/" ? " selectedPath" : ""}`}>
           <Link to="/">
             <img src={Search} alt="Search" />
             <p>Search</p>
@@ -22,25 +27,39 @@ const Navigation = () => {
         </div>
         {user ? (
           <>
-            <div className="navLinks">
+            <div
+              className={`navLinks${path === "/pantry" ? " selectedPath" : ""}`}
+            >
               <Link to="/pantry">
                 <img src={Pantry} alt="Pantry" />
                 <p>Pantry</p>
               </Link>
             </div>
-            <div className="navLinks">
+            <div
+              className={`navLinks${
+                path === "/intolerances" ? " selectedPath" : ""
+              }`}
+            >
               <Link to="/intolerances">
                 <img src={Intolerances} alt="Intolerances" />
                 <p>Intolerances</p>
               </Link>
             </div>
-            <div className="navLinks">
+            <div
+              className={`navLinks${
+                path === "/equipment" ? " selectedPath" : ""
+              }`}
+            >
               <Link to="/equipment">
                 <img src={Equipment} alt="Equipment" />
                 <p>Equipment</p>
               </Link>
             </div>
-            <div className="navLinks">
+            <div
+              className={`navLinks${
+                path === "/favorites" ? " selectedPath" : ""
+              }`}
+            >
               <Link to="/favorites">
                 <img src={Favorites} alt="Favorites" />
                 <p>Favorites</p>
