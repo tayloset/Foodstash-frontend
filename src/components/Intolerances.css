@@ -30,7 +30,7 @@
 .Intolerances button {
   position: relative;
   bottom: 5%;
-  left: 45%;
+  left: 49%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -43,9 +43,10 @@
   .intolerances1,
   .intolerances2 {
     margin-top: 3%;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 18%;
+    margin-right: 18%;
   }
+
   .Intolerances input {
     position: relative;
     right: 25%;
@@ -53,6 +54,7 @@
 
   .Intolerances label {
     margin: 0;
+    padding-bottom: 5px;
     font-size: 30px;
   }
 
