@@ -49,14 +49,14 @@ const Navigation = () => {
           </>
         ) : (
           <>
-            <h3>Sign-in to use these options!</h3>
-            <div>
+            <div className="notSignedInContainers signInParagraph">
+              <h3>Sign-in to use these options!</h3>
+            </div>
+            <div className="notSignedInContainers">
               <img className="notSignedIn" src={Pantry} alt="Pantry" />
               <p>Pantry</p>
             </div>
-            {/* <img src={Diet} alt="Diet" />
-          <p>Diet</p> */}
-            <div>
+            <div className="notSignedInContainers">
               <img
                 className="notSignedIn"
                 src={Intolerances}
@@ -64,11 +64,11 @@ const Navigation = () => {
               />
               <p>Intolerances</p>
             </div>
-            <div>
+            <div className="notSignedInContainers">
               <img className="notSignedIn" src={Equipment} alt="Equipment" />
               <p>Equipment</p>
             </div>
-            <div>
+            <div className="notSignedInContainers">
               <img className="notSignedIn" src={Favorites} alt="Favorites" />
               <p>Favorites</p>
             </div>
