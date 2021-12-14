@@ -32,7 +32,17 @@
   position: relative;
   bottom: 5%;
   left: 49%;
+  padding: 2px;
+  margin: 2px;
   font-family: "Acme", sans-serif;
+  font-size: large;
+  background-color: #408a8c;
+  color: white;
+  border-radius: 5px;
+}
+
+.Intolerances button:hover {
+  opacity: 0.75;
 }
 
 @media only screen and (min-width: 768px) {

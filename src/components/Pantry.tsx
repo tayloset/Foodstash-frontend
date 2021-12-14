@@ -12,6 +12,7 @@ const Pantry = () => {
     updatedProfile.pantry.push(foodItem);
     delete updatedProfile._id;
     updateProfileHandler(updatedProfile);
+    setFoodItem("");
   };
 
   const deleteFoodHandler = (index: number) => {

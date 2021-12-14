@@ -12,6 +12,7 @@ const Equipment = () => {
     updatedProfile.equipment.push(equipmentItem);
     delete updatedProfile._id;
     updateProfileHandler(updatedProfile);
+    setEquipmentItem("");
   };
 
   const deleteEquipmentHandler = (index: number) => {

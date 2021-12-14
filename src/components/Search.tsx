@@ -58,7 +58,6 @@ const Search = () => {
 
   const searchHandler = (e: FormEvent) => {
     e.preventDefault();
-    setCuisineClicked(false);
     cuisineString = "";
     cuisineArray.forEach((cuisine, index) => {
       if (cuisine) {
@@ -85,6 +84,8 @@ const Search = () => {
         }
       );
     }
+    setSearchTerm("");
+    setCuisineClicked(false);
   };
 
   return (
