@@ -3,6 +3,16 @@
   font-family: "Acme", sans-serif;
 }
 
+.Search .recipeBox {
+  width: 100%;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  display: block;
+  overflow-y: auto;
+  height: calc(100% - 330px);
+}
+
 .Search .searchForm {
   width: 100%;
   display: flex;
@@ -74,6 +84,16 @@
     height: calc(100% - 172px);
     background-color: white;
     border: 1px solid black;
+  }
+
+  .Search .recipeBox {
+    width: 100%;
+    position: fixed;
+    top: 23%;
+    left: 0;
+    display: block;
+    overflow-y: auto;
+    height: calc(100% - 123px);
   }
 
   .Search #searchTerm {

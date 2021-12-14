@@ -1,5 +1,11 @@
 .Pantry {
   width: 100%;
+  position: fixed;
+  top: 15.4%;
+  left: 0;
+  display: block;
+  overflow-y: auto;
+  height: calc(100% - 220px);
   font-family: "Acme", sans-serif;
 }
 
@@ -59,6 +65,12 @@
     width: 90%;
     margin-left: 10%;
     overflow-y: auto;
+    position: fixed;
+    top: 123px;
+    left: 0;
+    display: block;
+    overflow-y: auto;
+    height: calc(100% - 123px);
   }
   .Pantry .pantryForm {
     flex-direction: row;
