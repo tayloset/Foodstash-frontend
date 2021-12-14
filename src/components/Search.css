@@ -1,5 +1,6 @@
 .Search {
   width: 100%;
+  font-family: "Acme", sans-serif;
 }
 
 .Search .searchForm {
@@ -16,6 +17,8 @@
   background-color: #819c8e;
   color: black;
   padding: 8px;
+  font-family: "Acme", sans-serif;
+  font-size: large;
 }
 
 .Search .searchButton:hover,
