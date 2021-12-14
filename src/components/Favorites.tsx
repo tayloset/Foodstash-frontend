@@ -12,7 +12,6 @@ const Favorites = () => {
   useEffect(() => {
     searchByIds(profile!.favorites.toString()).then((data) => {
       setRecipes(data);
-      console.log(recipes);
     });
   }, []);
 

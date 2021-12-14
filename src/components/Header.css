@@ -18,6 +18,10 @@
   height: 100px;
 }
 
+.Header h1:hover {
+  opacity: 0.85;
+}
+
 .Header {
   background-image: url(../assets/Banner.png);
   display: flex;
