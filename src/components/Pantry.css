@@ -6,6 +6,7 @@
   display: block;
   overflow-y: auto;
   height: calc(100% - 220px);
+  font-family: "Acme", sans-serif;
 }
 
 .Pantry .pantryForm {
@@ -13,8 +14,33 @@
   flex-direction: column;
 }
 
+.Pantry .addFoodButton,
+#foodItem {
+  border-radius: 0;
+  border: 2px solid black;
+  background-color: #819c8e;
+  color: black;
+  padding: 8px;
+  font-family: "Acme", sans-serif;
+  font-size: large;
+}
+
+.Pantry .addFoodButton:hover,
+#foodItem:hover {
+  opacity: 85%;
+}
+
+.Pantry #foodItem {
+  border-bottom: 1px solid black;
+}
+
+.Pantry #foodItem::placeholder {
+  color: black;
+}
+
 .Pantry .addFoodButton {
   width: 100%;
+  border-top: 1px solid black;
 }
 
 .Pantry ul {
@@ -30,7 +56,8 @@
 .Pantry .foodButton {
   padding: 2px;
   margin: 2px;
-  font-size: x-large;
+  font-family: "Acme", sans-serif;
+  font-size: large;
 }
 
 @media only screen and (min-width: 768px) {
@@ -55,10 +82,12 @@
     padding: 15px;
     border-radius: 0;
     border: 2px solid black;
+    border-right: 1px solid black;
   }
 
   .Pantry .addFoodButton {
     width: 20%;
     border: 2px solid black;
+    border-left: 1px solid black;
   }
 }

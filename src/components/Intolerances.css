@@ -1,6 +1,7 @@
 .Intolerances {
   margin: 20px;
   width: 100%;
+  font-family: "Acme", sans-serif;
 }
 
 .Intolerances .intolerancesContainer {
@@ -31,6 +32,7 @@
   position: relative;
   bottom: 5%;
   left: 49%;
+  font-family: "Acme", sans-serif;
 }
 
 @media only screen and (min-width: 768px) {
@@ -63,6 +65,6 @@
     width: 23px;
   }
   .Intolerances button {
-    font-size: 20px;
+    font-size: 30px;
   }
 }

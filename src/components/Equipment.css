@@ -7,11 +7,41 @@
   width: 100%;
   overflow-y: auto;
   height: calc(100% - 220px);
+  font-family: "Acme", sans-serif;
 }
 
 .Equipment .equipmentForm {
   display: flex;
   flex-direction: column;
+}
+
+.Equipment .equipmentAddButton,
+#equipmentItem {
+  border-radius: 0;
+  border: 2px solid black;
+  background-color: #819c8e;
+  color: black;
+  padding: 8px;
+  font-family: "Acme", sans-serif;
+  font-size: large;
+}
+
+.Equipment .equipmentAddButton:hover,
+#equipmentItem:hover {
+  opacity: 85%;
+}
+
+.Equipment #equipmentItem {
+  border-bottom: 1px solid black;
+}
+
+.Equipment #equipmentItem::placeholder {
+  color: black;
+}
+
+.Equipment .equipmentAddButton {
+  width: 100%;
+  border-top: 1px solid black;
 }
 
 .Equipment .equipmentAddButton {
@@ -31,7 +61,8 @@
 .Equipment .equipmentButton {
   padding: 2px;
   margin: 2px;
-  font-size: x-large;
+  font-family: "Acme", sans-serif;
+  font-size: large;
 }
 
 @media only screen and (min-width: 768px) {
@@ -55,11 +86,13 @@
     padding: 15px;
     border-radius: 0;
     border: 2px solid black;
+    border-right: 1px solid black;
   }
 
   .Equipment .equipmentAddButton {
     width: 20%;
     border-radius: 0;
     border: 2px solid black;
+    border-left: 1px solid black;
   }
 }
