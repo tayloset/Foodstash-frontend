@@ -375,7 +375,9 @@ const Search = () => {
           Search
         </button>
       </form>
-      <RecipeList recipes={recipes} />
+      <div className="recipeBox">
+        <RecipeList recipes={recipes} />
+      </div>
     </div>
   );
 };
