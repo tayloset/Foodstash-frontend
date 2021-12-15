@@ -1,41 +1,42 @@
 .Intolerances {
-  margin: 20px;
+  margin: auto 0;
   width: 100%;
   font-family: "Acme", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .Intolerances .intolerancesContainer {
   display: flex;
   flex-direction: row;
-  margin-left: 10vw;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .Intolerances .intolerancesCol1,
 .intolerancesCol2 {
   flex: 1;
-}
-
-.Intolerances .intolerancesCol1 {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .Intolerances input {
-  height: 17px;
-  width: 17px;
+  height: 25px;
+  width: 25px;
 }
 
 .Intolerances label {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .Intolerances button {
-  position: relative;
-  bottom: 5%;
-  left: 38%;
+  margin: 0 auto;
   padding: 2px;
-  margin: 2px;
   font-family: "Acme", sans-serif;
-  font-size: large;
+  font-size: 30px;
   background-color: #408a8c;
   color: white;
   border-radius: 5px;
@@ -46,35 +47,29 @@
 }
 
 @media only screen and (min-width: 768px) {
-  /* Desktop view */
-
   .Intolerances {
-    margin: 0;
+    margin: 20px 0px 0px 10%;
+    width: 90%;
   }
-  .Intolerances .intolerancesContainer,
-  .intolerancesCol1,
+
+  .Intolerances .intolerancesContainer {
+    display: flex;
+  }
+
+  .Intolerances .intolerancesCol1,
   .intolerancesCol2 {
-    margin-top: 3%;
-    margin-left: 18%;
+    width: 80%;
   }
 
-  .Intolerances input {
-    position: relative;
-    right: 25%;
+  .Intolerances .intolerancesCol1 {
+    flex: 0.44;
   }
 
-  .Intolerances label {
-    margin: 0;
-    padding-bottom: 5px;
-    font-size: 30px;
+  .Intolerances .intolerancesCol2 {
+    flex: 0.66;
   }
 
-  .Intolerances input {
-    height: 23px;
-    width: 23px;
-  }
   .Intolerances button {
-    font-size: 30px;
-    left: 53%;
+    margin-left: calc(44% - 28.17px);
   }
 }

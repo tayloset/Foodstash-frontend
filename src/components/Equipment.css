@@ -1,12 +1,11 @@
 .Equipment {
   width: 100%;
   position: fixed;
-  top: 15.4%;
+  top: 123px;
   left: 0;
   display: block;
-  width: 100%;
   overflow-y: auto;
-  height: calc(100% - 220px);
+  height: calc(100% - 218px);
   font-family: "Acme", sans-serif;
 }
 
@@ -42,10 +41,6 @@
 .Equipment .equipmentAddButton {
   width: 100%;
   border-top: 1px solid black;
-}
-
-.Equipment .equipmentAddButton {
-  width: 100%;
 }
 
 .Equipment ul {
