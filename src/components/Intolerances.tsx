@@ -1,7 +1,7 @@
 import { FormEvent, useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import "./Intolerances.css";
-
+//comment
 const Intolerances = () => {
   const { profile, updateProfileHandler } = useContext(AuthContext);
   const [intolerances, setIntolerances] = useState(new Array(12).fill(false));
