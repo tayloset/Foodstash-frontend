@@ -31,6 +31,16 @@
   width: 100%;
 }
 
+.Navigation .navLinks:hover {
+  background-color: #07881f;
+  opacity: 70%;
+}
+
+.Navigation .notSignedInContainers:hover {
+  background-color: #46af88;
+  opacity: 50%;
+}
+
 .Navigation .pseudoNav {
   display: flex;
   justify-content: center;
