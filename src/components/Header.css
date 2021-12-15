@@ -1,6 +1,8 @@
 .Header {
   width: 100%;
   font-family: "Road Rage", cursive;
+  background-image: url(../assets/Banner.png);
+  height: 123px;
 }
 
 .Header :link {
@@ -22,24 +24,18 @@
   opacity: 0.85;
 }
 
-.Header {
-  background-image: url(../assets/Banner.png);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* .Header button {
-  margin-right: 5px;
-} */
-
 .Header h1 {
-  display: absolute;
+  position: absolute;
+  left: calc(50% - 64px);
+  top: 34px;
   font-size: 50px;
+  margin: 0;
 }
 
 .Header button {
-  margin-right: 10px;
+  position: absolute;
+  right: 10px;
+  top: 46px;
   background-color: #4285f4;
   border: 0px;
   color: white;

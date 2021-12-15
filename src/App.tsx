@@ -4,7 +4,6 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import Diet from "./components/Diet";
 import Equipment from "./components/Equipment";
 import Favorites from "./components/Favorites";
 import Header from "./components/Header";
@@ -20,7 +19,7 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/" exact>
+          <Route path="/search" exact>
             <Search />
           </Route>
           <Route path="/equipment" exact>
@@ -28,9 +27,6 @@ function App() {
           </Route>
           <Route path="/pantry" exact>
             <Pantry />
-          </Route>
-          <Route path="/diet" exact>
-            <Diet />
           </Route>
           <Route path="/intolerances" exact>
             <Intolerances />
@@ -42,7 +38,7 @@ function App() {
             <RecipeDetails />
           </Route>
           <Route path="/">
-            <Redirect to="/" />
+            <Redirect to="/search" />
           </Route>
         </Switch>
         <Navigation />
