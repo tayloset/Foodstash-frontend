@@ -24,29 +24,33 @@ const Pantry = () => {
 
   return (
     <div className="Pantry">
-      <form className="pantryForm" onSubmit={submitHandler}>
-        <input
-          type="text"
-          name="foodItem"
-          id="foodItem"
-          placeholder="Add Items to your Pantry!"
-          value={foodItem}
-          onChange={(e) => setFoodItem(e.target.value)}
-        />
-        <button className="addFoodButton">Add</button>
-      </form>
-      <ul className="foodList">
-        {profile?.pantry.map((item, index) => (
-          <li key={`${item}${index}`}>
-            <button
-              onClick={() => deleteFoodHandler(index)}
-              className="foodButton"
-            >
-              {item} X
-            </button>
-          </li>
-        ))}
-      </ul>
+      {profile && (
+        <>
+          <form className="pantryForm" onSubmit={submitHandler}>
+            <input
+              type="text"
+              name="foodItem"
+              id="foodItem"
+              placeholder="Add Items to your Pantry!"
+              value={foodItem}
+              onChange={(e) => setFoodItem(e.target.value)}
+            />
+            <button className="addFoodButton">Add</button>
+          </form>
+          <ul className="foodList">
+            {profile?.pantry.map((item, index) => (
+              <li key={`${item}${index}`}>
+                <button
+                  onClick={() => deleteFoodHandler(index)}
+                  className="foodButton"
+                >
+                  {item} X
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 };

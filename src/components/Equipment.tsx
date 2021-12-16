@@ -24,31 +24,35 @@ const Equipment = () => {
 
   return (
     <div className="Equipment">
-      <form className="equipmentForm" onSubmit={submitHandler}>
-        <input
-          type="text"
-          name="equipmentItem"
-          id="equipmentItem"
-          placeholder="Add Equipment to your Kitchen!"
-          value={equipmentItem}
-          onChange={(e) => setEquipmentItem(e.target.value)}
-        />
-        <button className="equipmentAddButton">Add</button>
-      </form>
-      <div className="EquipmentList">
-        <ul>
-          {profile?.equipment.map((item, index) => (
-            <li key={`${item}${index}`}>
-              <button
-                onClick={() => deleteEquipmentHandler(index)}
-                className="equipmentButton"
-              >
-                {item} X
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {profile && (
+        <>
+          <form className="equipmentForm" onSubmit={submitHandler}>
+            <input
+              type="text"
+              name="equipmentItem"
+              id="equipmentItem"
+              placeholder="Add Equipment to your Kitchen!"
+              value={equipmentItem}
+              onChange={(e) => setEquipmentItem(e.target.value)}
+            />
+            <button className="equipmentAddButton">Add</button>
+          </form>
+          <div className="EquipmentList">
+            <ul>
+              {profile?.equipment.map((item, index) => (
+                <li key={`${item}${index}`}>
+                  <button
+                    onClick={() => deleteEquipmentHandler(index)}
+                    className="equipmentButton"
+                  >
+                    {item} X
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
+      )}
     </div>
   );
 };

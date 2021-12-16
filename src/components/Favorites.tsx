@@ -10,18 +10,24 @@ const Favorites = () => {
   const { profile } = useContext(AuthContext);
 
   useEffect(() => {
-    searchByIds(profile!.favorites.toString()).then((data) => {
-      setRecipes(data);
-    });
+    if (profile) {
+      searchByIds(profile!.favorites.toString()).then((data) => {
+        setRecipes(data);
+      });
+    }
   }, [profile]);
 
   return (
     <table className="Favorites">
-      <tbody>
-        {recipes.map((recipe) => (
-          <RecipeItem recipe={recipe} key={recipe?.id!} />
-        ))}
-      </tbody>
+      {profile && (
+        <>
+          <tbody>
+            {recipes.map((recipe) => (
+              <RecipeItem recipe={recipe} key={recipe?.id!} />
+            ))}
+          </tbody>
+        </>
+      )}
     </table>
   );
 };
