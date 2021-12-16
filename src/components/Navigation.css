@@ -33,12 +33,12 @@
 
 .Navigation .navLinks:hover {
   background-color: #07881f;
-  opacity: 70%;
+  opacity: 0.7;
 }
 
 .Navigation .notSignedInContainers:hover {
   background-color: #46af88;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .Navigation .pseudoNav {
@@ -74,7 +74,7 @@
 }
 
 .Navigation .notSignedInContainers {
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .Navigation .active {
